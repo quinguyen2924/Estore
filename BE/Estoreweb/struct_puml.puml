@@ -1,0 +1,252 @@
+@startuml Apple Store VN
+
+' Style
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor Black
+}
+
+' Enums
+enum OrderStatus {
+    PENDING
+    PROCESSING
+    SHIPPED
+    DELIVERED
+    CANCELLED
+}
+
+enum UserRole {
+    ADMIN
+    MANAGER
+    STAFF
+    CUSTOMER
+}
+
+enum Permission {
+    MANAGE_USERS
+    MANAGE_PRODUCTS
+    MANAGE_ORDERS
+    MANAGE_PROMOTIONS
+    VIEW_REPORTS
+    MANAGE_INVENTORY
+    MANAGE_CATEGORIES
+    MANAGE_REVIEWS
+}
+
+' Classes
+class User {
+    -userId: Long
+    -email: String
+    -password: String
+    -fullName: String
+    -phone: String
+    -address: String
+    -role: UserRole
+    -isActive: Boolean
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +register(): Boolean
+    +login(email: String, password: String): Boolean
+    +updateProfile(userData: Map): Boolean
+    +getOrders(): List<Order>
+    +getCart(): Cart
+}
+
+class Admin {
+    -adminId: Long
+    -userId: Long
+    -department: String
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +manageUsers(): List<User>
+    +manageProducts(): List<Product>
+    +manageOrders(): List<Order>
+    +managePromotions(): List<Promotion>
+    +generateReports(): Report
+    +manageInventory(): Boolean
+}
+
+class Role {
+    -roleId: Long
+    -name: UserRole
+    -description: String
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +getPermissions(): List<Permission>
+    +addPermission(permission: Permission): Boolean
+    +removePermission(permission: Permission): Boolean
+}
+
+class Permission {
+    -permissionId: Long
+    -name: String
+    -description: String
+    -createdAt: DateTime
+    -updatedAt: DateTime
+}
+
+class Report {
+    -reportId: Long
+    -type: String
+    -data: Map
+    -createdAt: DateTime
+    +generate(): Boolean
+    +export(format: String): File
+    +schedule(interval: String): Boolean
+}
+
+class Category {
+    -categoryId: Long
+    -name: String
+    -slug: String
+    -parentId: Long
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +getProducts(): List<Product>
+    +getSubCategories(): List<Category>
+}
+
+class Product {
+    -productId: Long
+    -name: String
+    -slug: String
+    -description: String
+    -price: BigDecimal
+    -categoryId: Long
+    -stockQuantity: Integer
+    -isActive: Boolean
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +getImages(): List<ProductImage>
+    +getReviews(): List<Review>
+    +getPromotions(): List<Promotion>
+    +updateStock(quantity: Integer): Boolean
+    +checkAvailability(): Boolean
+}
+
+class ProductImage {
+    -imageId: Long
+    -productId: Long
+    -imageUrl: String
+    -isPrimary: Boolean
+    -createdAt: DateTime
+}
+
+class Cart {
+    -cartId: Long
+    -userId: Long
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +addItem(productId: Long, quantity: Integer): Boolean
+    +removeItem(cartItemId: Long): Boolean
+    +updateQuantity(cartItemId: Long, quantity: Integer): Boolean
+    +getTotal(): BigDecimal
+    +clear(): Boolean
+    +checkout(): Order
+}
+
+class CartItem {
+    -cartItemId: Long
+    -cartId: Long
+    -productId: Long
+    -quantity: Integer
+    -createdAt: DateTime
+    -updatedAt: DateTime
+}
+
+class Order {
+    -orderId: Long
+    -userId: Long
+    -totalAmount: BigDecimal
+    -status: OrderStatus
+    -shippingAddress: String
+    -paymentMethod: String
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +calculateTotal(): BigDecimal
+    +updateStatus(status: OrderStatus): Boolean
+    +cancel(): Boolean
+    +getItems(): List<OrderItem>
+}
+
+class OrderItem {
+    -orderItemId: Long
+    -orderId: Long
+    -productId: Long
+    -quantity: Integer
+    -price: BigDecimal
+    -createdAt: DateTime
+}
+
+class Promotion {
+    -promotionId: Long
+    -name: String
+    -description: String
+    -discountPercent: BigDecimal
+    -discountAmount: BigDecimal
+    -startDate: DateTime
+    -endDate: DateTime
+    -isActive: Boolean
+    -createdAt: DateTime
+    -updatedAt: DateTime
+    +isValid(): Boolean
+    +calculateDiscount(amount: BigDecimal): BigDecimal
+}
+
+class Review {
+    -reviewId: Long
+    -productId: Long
+    -userId: Long
+    -rating: Integer
+    -comment: String
+    -createdAt: DateTime
+    +validateRating(): Boolean
+}
+
+' Relationships
+User "1" -- "1" Role : has >
+Role "*" -- "*" Permission : contains >
+Admin "1" -- "1" User : extends >
+Admin "1" -- "*" Report : generates >
+User "1" -- "1" Cart : has >
+User "1" -- "*" Order : places >
+User "1" -- "*" Review : writes >
+Category "1" -- "*" Product : contains >
+Product "1" -- "*" ProductImage : has >
+Product "1" -- "*" Review : receives >
+Product "1" -- "*" CartItem : added to >
+Product "1" -- "*" OrderItem : ordered as >
+Product "*" -- "*" Promotion : has >
+Cart "1" -- "*" CartItem : contains >
+Order "1" -- "*" OrderItem : contains >
+
+' Notes
+note right of User
+  Quản lý thông tin người dùng
+  và xác thực
+end note
+
+note right of Admin
+  Quản lý hệ thống và
+  phân quyền người dùng
+end note
+
+note right of Role
+  Định nghĩa vai trò và
+  quyền hạn trong hệ thống
+end note
+
+note right of Product
+  Quản lý thông tin sản phẩm
+  và tồn kho
+end note
+
+note right of Order
+  Quản lý đơn hàng và
+  trạng thái giao hàng
+end note
+
+@enduml 
