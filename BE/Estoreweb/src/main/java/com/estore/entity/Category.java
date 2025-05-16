@@ -24,10 +24,10 @@ public class Category {
     @JoinColumn(name = "parent_id")
     private Category parent;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
     private List<Category> subCategories = new ArrayList<>();
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Product> products = new ArrayList<>();
 
     @Column(nullable = false)
@@ -44,32 +44,4 @@ public class Category {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public List<Category> getSubCategories() {
-        return subCategories;
-    }
-
-    public void addSubCategory(Category subCategory) {
-        subCategories.add(subCategory);
-        subCategory.setParent(this);
-    }
-
-    public void removeSubCategory(Category subCategory) {
-        subCategories.remove(subCategory);
-        subCategory.setParent(null);
-    }
-
-    public void addProduct(Product product) {
-        products.add(product);
-        product.setCategory(this);
-    }
-
-    public void removeProduct(Product product) {
-        products.remove(product);
-        product.setCategory(null);
-    }
-} 
+}
