@@ -1,7 +1,7 @@
 package com.estore.entity;
 
-import com.estore.enums.Permission;
 import com.estore.enums.UserRole;
+import com.estore.enums.Permission;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -28,7 +28,7 @@ public class Role {
 
     private LocalDateTime updatedAt;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "role_permissions", joinColumns = @JoinColumn(name = "role_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "permission")
@@ -59,40 +59,4 @@ public class Role {
     public boolean removePermission(Permission permission) {
         return permissions.remove(permission);
     }
-
-    public boolean hasPermission(Permission permission) {
-        return permissions.contains(permission);
-    }
-
-    public void clearPermissions() {
-        permissions.clear();
-    }
-
-    public void setDefaultPermissions() {
-        permissions.clear();
-        switch (name) {
-            case ADMIN:
-                permissions.addAll(List.of(Permission.values()));
-                break;
-            case MANAGER:
-                permissions.addAll(List.of(
-                    Permission.MANAGE_PRODUCTS,
-                    Permission.MANAGE_ORDERS,
-                    Permission.MANAGE_PROMOTIONS,
-                    Permission.VIEW_REPORTS,
-                    Permission.MANAGE_INVENTORY
-                ));
-                break;
-            case STAFF:
-                permissions.addAll(List.of(
-                    Permission.MANAGE_ORDERS,
-                    Permission.VIEW_REPORTS,
-                    Permission.MANAGE_INVENTORY
-                ));
-                break;
-            case CUSTOMER:
-                // Customers have no special permissions
-                break;
-        }
-    }
-} 
+}

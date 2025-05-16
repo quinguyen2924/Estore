@@ -4,6 +4,7 @@ import com.estore.enums.Permission;
 import com.estore.enums.UserRole;
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,5 +14,5 @@ public class RoleDTO {
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private List<Permission> permissions;
-} 
+    private List<Permission> permissions = new ArrayList<>();
+}
