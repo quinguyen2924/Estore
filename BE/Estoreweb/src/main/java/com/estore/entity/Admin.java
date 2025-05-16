@@ -4,14 +4,15 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @Entity
 @Table(name = "admins")
 public class Admin {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long adminId;
+     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID adminId;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
