@@ -1,21 +1,33 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 const productList = [
-  { name: "Mac", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-mac-nav-202310?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1696964122966" },
-  { name: "iPhone", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-iphone-nav-202309?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1692971740452" },
-  { name: "iPad", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-ipad-nav-202405?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1714505085411" },
-  { name: "Apple Watch", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-watch-nav-202309_GEO_US?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1693501324197" },
-  { name: "Apple Vision Pro", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-visionpro-nav-202401?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1703003302202" },
-  { name: "AirPods", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-airpods-nav-202209?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1660676485881" },
-  { name: "AirTag", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-airtag-nav-202108?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1625783380000" },
-  { name: "Apple TV 4K", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-appletv-nav-202210?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1664628458488" },
-  { name: "HomePod", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-homepod-nav-202301?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1670557210097" },
-  { name: "Accessories", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-accessories-nav-202309?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1693501324197" },
-  { name: "Apple Gift Card", img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-giftcards-nav-202108?wid=400&hei=260&fmt=jpeg&qlt=95&.v=1625783380000" },
+  { name: "Mac", img: "/images/Stores/store-card-13-mac-nav-202310.jpg" },
+  { name: "iPhone", img: "/images/Stores/store-card-13-iphone-nav-202309.jpg" },
+  { name: "iPad", img: "/images/Stores/store-card-13-ipad-nav-202405.jpg" },
+  { name: "Apple Watch", img: "/images/Stores/store-card-13-watch-nav-202409.png" },
+  { name: "Apple Vision Pro", img: "/images/Stores/store-card-13-vision-pro-nav-202401.png" },
+  { name: "AirPods", img: "/images/Stores/store-card-13-airpods-nav-202209.jpg" },
+  { name: "AirTag", img: "/images/Stores/store-card-13-airtags-nav-202108.png" },
+  { name: "Apple TV 4K", img: "/images/Stores/store-card-13-appletv-nav-202210.jpg" },
+  { name: "HomePod", img: "/images/Stores/store-card-13-homepod-nav-202301.jpg" },
+  { name: "Accessories", img: "/images/Stores/store-card-13-accessories-nav-202503.png" },
+  { name: "Apple Gift Card", img: "/images/Stores/store-card-13-holiday-giftcards-asit-agc-nav-202111.png" },
 ];
 
 function ProductCarousel() {
   const scrollRef = useRef(null);
+  const [showArrows, setShowArrows] = useState(false);
+
+  useEffect(() => {
+    const checkScrollable = () => {
+      if (scrollRef.current) {
+        setShowArrows(scrollRef.current.scrollWidth > scrollRef.current.clientWidth);
+      }
+    };
+    checkScrollable();
+    window.addEventListener('resize', checkScrollable);
+    return () => window.removeEventListener('resize', checkScrollable);
+  }, []);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -28,18 +40,20 @@ function ProductCarousel() {
 
   return (
     <div className="relative bg-white py-4 w-full">
-      <button
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center rounded-full bg-[#e9e9eb] hover:bg-[#d4d4d7] transition-colors"
-        onClick={() => scroll('left')}
-        aria-label="Scroll left"
-      >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M15 6l-6 6 6 6" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
+      {showArrows && (
+        <button
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center rounded-full bg-[#e9e9eb] hover:bg-[#d4d4d7] transition-colors"
+          onClick={() => scroll('left')}
+          aria-label="Scroll left"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      )}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto space-x-8 no-scrollbar w-full"
+        className="flex overflow-x-auto space-x-8 no-scrollbar w-full justify-center items-center"
         style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {productList.map((item, idx) => (
@@ -49,15 +63,17 @@ function ProductCarousel() {
           </div>
         ))}
       </div>
-      <button
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center rounded-full bg-[#e9e9eb] hover:bg-[#d4d4d7] transition-colors"
-        onClick={() => scroll('right')}
-        aria-label="Scroll right"
-      >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M9 6l6 6-6 6" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
+      {showArrows && (
+        <button
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center rounded-full bg-[#e9e9eb] hover:bg-[#d4d4d7] transition-colors"
+          onClick={() => scroll('right')}
+          aria-label="Scroll right"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M9 6l6 6-6 6" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      )}
     </div>
   );
 }
@@ -164,25 +180,25 @@ const Stores = () => {
       {/* Inject style for no-scrollbar */}
       <style>{style}</style>
       <ProductCarousel />
-      <div className="w-full mt-12 mb-2">
+      <div className="w-full mt-20 mb-0">
         <h2 className="text-3xl font-semibold text-gray-900 text-left w-full">
           <span className="font-bold">The latest.</span> <span className="font-normal text-gray-700">Take a look at what's new, right now.</span>
         </h2>
       </div>
       <ProductCardCarousel />
-      <div className="w-full mt-12 mb-2">
+      <div className="w-full mt-20 mb-0">
         <h2 className="text-3xl font-semibold text-gray-900 text-left w-full">
           <span className="font-bold">The latest.</span> <span className="font-normal text-gray-700">Help is here. Whenever and however you need it.</span>
         </h2>
       </div>
       <ProductCardCarousel />
-      <div className="w-full mt-12 mb-2">
+      <div className="w-full mt-20 mb-0">
         <h2 className="text-3xl font-semibold text-gray-900 text-left w-full">
           <span className="font-bold">The latest.</span> <span className="font-normal text-gray-700">Accessories. Essentials that pair perfectly with your favorite devices.</span>
         </h2>
       </div>
       <ProductCardCarousel />
-      <div className="w-full mt-12 mb-2">
+      <div className="w-full mt-20 mb-0">
         <h2 className="text-3xl font-semibold text-gray-900 text-left w-full">
           <span className="font-bold">The latest.</span> <span className="font-normal text-gray-700">Loud and clear. Unparalleled choices for rich, high-quality sound.</span>
         </h2>
@@ -190,7 +206,21 @@ const Stores = () => {
       <ProductCardCarousel />
       {/* Featured Products */}
       
-      
+      <div className="w-full border-t border-gray-200 mt-12 pt-4 pb-8 flex items-center px-8 bg-[#f5f5f7]">
+  <img
+    src="/images/Apple-Logosu.png"
+    alt="Apple"
+    className="w-5 h-5 mr-2"
+    style={{ display: 'inline-block' }}
+  />
+  <span className="mx-1 text-gray-400">{'>'}</span>
+  <a
+    href="#"
+    className="ml-2 text-sm text-gray-700 hover:underline"
+  >
+    Apple Store Online
+  </a>
+</div>
     </div>
   );
 };

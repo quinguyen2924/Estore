@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import Stores from './pages/Stores'
+import Mac from './pages/Mac'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/store" element={<Stores />} />
+              <Route path="/mac" element={<Mac />} />
             </Routes>
           </div>
         </div>
