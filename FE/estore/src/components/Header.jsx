@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaApple } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { BiShoppingBag } from "react-icons/bi";
@@ -8,7 +9,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const menuItems = [
-    { name: 'Cửa Hàng', path: '/' },
+    { name: 'Cửa Hàng', path: '/store' },
     { name: 'Mac', path: '/mac' },
     { name: 'iPad', path: '/ipad' },
     { name: 'iPhone', path: '/iphone' },
@@ -59,16 +60,16 @@ function Header() {
         <div className="w-full flex items-center justify-center">
           <ul className="flex items-center justify-between w-full text-xs font-normal">
             <li className="px-2">
-              <a href="/" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <FaApple className="h-[18px] w-[18px]" />
-              </a>
+              </Link>
             </li>
             
             {menuItems.map((item, index) => (
               <li key={item.name} className={`px-2 relative group ${index === 0 ? 'has-dropdown' : ''}`}>
-                <a href={item.path} className="hover:text-black/70 transition-colors py-3">
+                <Link to={item.path} className="hover:text-black/70 transition-colors py-3">
                   {item.name}
-                </a>
+                </Link>
                 
                 {/* Dropdown menu for "Cửa Hàng" */}
                 {index === 0 && (
@@ -81,9 +82,9 @@ function Header() {
                             <ul className="space-y-3 text-center">
                               {storeDropdownContent.columns[0].links.map((link, linkIndex) => (
                                 <li key={linkIndex}>
-                                  <a href={link.path} className="text-sm hover:text-blue-500 transition-colors">
+                                  <Link to={link.path} className="text-sm hover:text-blue-500 transition-colors">
                                     {link.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -94,9 +95,9 @@ function Header() {
                             <ul className="space-y-3 text-center">
                               {storeDropdownContent.columns[1].links.map((link, linkIndex) => (
                                 <li key={linkIndex}>
-                                  <a href={link.path} className="text-sm hover:text-blue-500 transition-colors">
+                                  <Link to={link.path} className="text-sm hover:text-blue-500 transition-colors">
                                     {link.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -107,9 +108,9 @@ function Header() {
                             <ul className="space-y-3 text-center">
                               {storeDropdownContent.columns[2].links.map((link, linkIndex) => (
                                 <li key={linkIndex}>
-                                  <a href={link.path} className="text-sm hover:text-blue-500 transition-colors">
+                                  <Link to={link.path} className="text-sm hover:text-blue-500 transition-colors">
                                     {link.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -123,15 +124,15 @@ function Header() {
             ))}
             
             <li className="px-2">
-              <a href="/search" className="flex items-center">
+              <Link to="/search" className="flex items-center">
                 <IoIosSearch className="h-[18px] w-[18px]" />
-              </a>
+              </Link>
             </li>
             
             <li className="px-2">
-              <a href="/cart" className="flex items-center">
+              <Link to="/cart" className="flex items-center">
                 <BiShoppingBag className="h-[18px] w-[18px]" />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -139,17 +140,17 @@ function Header() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden px-4 py-3 flex justify-between items-center">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <FaApple className="h-6 w-6" />
-        </a>
+        </Link>
         
         <div className="flex items-center space-x-5">
-          <a href="/search" className="text-black">
+          <Link to="/search" className="text-black">
             <IoIosSearch className="h-6 w-6" />
-          </a>
-          <a href="/cart" className="text-black">
+          </Link>
+          <Link to="/cart" className="text-black">
             <BiShoppingBag className="h-6 w-6" />
-          </a>
+          </Link>
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-black"
@@ -163,9 +164,9 @@ function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white fixed inset-0 z-50 overflow-y-auto pt-16">
           <div className="p-4 flex justify-between absolute top-0 left-0 right-0 bg-white">
-            <a href="/" className="text-black">
+            <Link to="/" className="text-black">
               <FaApple className="h-6 w-6" />
-            </a>
+            </Link>
             <button 
               onClick={() => setIsMenuOpen(false)}
               className="text-black"
@@ -178,12 +179,12 @@ function Header() {
           <ul className="px-4 pt-2 pb-8">
             {menuItems.map((item) => (
               <li key={item.name} className="py-3 border-b border-gray-200">
-                <a href={item.path} className="text-black text-lg flex justify-between items-center">
+                <Link to={item.path} className="text-black text-lg flex justify-between items-center">
                   {item.name}
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
