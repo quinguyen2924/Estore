@@ -1,6 +1,111 @@
 import React from 'react';
 import { FaApple } from "react-icons/fa";
+import ImageCarousel from "../components/image_carousel"
 function HomePage() {
+  const slides = [
+    {
+      id: 1,
+      image: "./images/home/carol1.jpg",
+      title: "Severance",
+      subtitle: "Thriller · There's more to work than life.",
+      url: "https://tv.apple.com/us/show/murderbot/umc.cmc.5owrzntj9v1gpg31wshflud03",
+      cta: {
+        text: "Stream now",
+        action: () => console.log("Stream now clicked"),
+      },
+      logo: "/placeholder.svg?height=30&width=80",
+    },
+    {
+      id: 2,
+      image: "./images/home/carol2.jpg",
+      title: "Featured Show",
+      subtitle: "Drama · Discover the story behind the headlines",
+      cta: {
+        text: "Watch now",
+        action: () => console.log("Watch now clicked"),
+      },
+    },
+    {
+      id: 3,
+      image: "./images/home/carol3.jpg",
+      title: "New Release",
+      subtitle: "Comedy · Laugh out loud with our latest series",
+      cta: {
+        text: "Start watching",
+        action: () => console.log("Start watching clicked"),
+      },
+    },
+    {
+      id: 4,
+      image: "./images/home/carol4.jpg",
+      title: "Award Winner",
+      subtitle: "Documentary · The untold story",
+      cta: {
+        text: "Learn more",
+        action: () => console.log("Learn more clicked"),
+      },
+    },
+    {
+      id: 5,
+      image: "./images/home/carol5.avif",
+      title: "Fan Favorite",
+      subtitle: "Action · The adventure continues",
+      cta: {
+        text: "Explore",
+        action: () => console.log("Explore clicked"),
+      },
+    },
+    {
+      id: 6,
+      image: "./images/home/carol6.jpg",
+      title: "Fan Favorite",
+      subtitle: "Action · The adventure continues",
+      cta: {
+        text: "Explore",
+        action: () => console.log("Explore clicked"),
+      },
+    },
+    {
+      id: 7,
+      image: "./images/home/carol7.jpg",
+      title: "Fan Favorite",
+      subtitle: "Action · The adventure continues",
+      cta: {
+        text: "Explore",
+        action: () => console.log("Explore clicked"),
+      },
+    },
+    {
+      id: 8,
+      image: "./images/home/carol8.jpeg",
+      title: "Fan Favorite",
+      subtitle: "Action · The adventure continues",
+      cta: {
+        text: "Explore",
+        action: () => console.log("Explore clicked"),
+      },
+    },
+    {
+      id: 9,
+      image: "/placeholder.svg?height=600&width=1200",
+      title: "Fan Favorite",
+      subtitle: "Action · The adventure continues",
+      cta: {
+        text: "Explore",
+        action: () => console.log("Explore clicked"),
+      },
+    },
+    {
+      id: 10,
+      image: "/placeholder.svg?height=600&width=1200",
+      title: "Fan Favorite",
+      subtitle: "Action · The adventure continues",
+      cta: {
+        text: "Explore",
+        action: () => console.log("Explore clicked"),
+      },
+    },
+  ]
   return (
     <div className="bg-white w-full">
       {/* Hero Banner - iPhone 16 */}
@@ -17,7 +122,7 @@ function HomePage() {
           </p>
           <div className="mt-6 md:mt-10 flex justify-center">
             <img 
-              src="./images/herobanner_image.webp" 
+              src="./images/home/herobanner_image.webp" 
               alt="iPhone 16" 
               className="w-full max-w-3xl mx-auto"
             />
@@ -40,7 +145,7 @@ function HomePage() {
           </div>
           <div className="mt-6 md:mt-10 flex justify-center">
             <img 
-              src="./images/applewatch_home.jpg" 
+              src="./images/home/applewatch_home.jpg" 
               alt="Apple Watch Series 10" 
               className="w-full max-w-3xl mx-auto"
             />
@@ -62,7 +167,7 @@ function HomePage() {
           </div>
           <div className="mt-6 md:mt-10 flex justify-center">
             <img 
-              src="./images/macair_home.png" 
+              src="./images/home/macair_home.png" 
               alt="MacBook Air" 
               className="w-full max-w-2xl mx-auto"
             />
@@ -78,15 +183,15 @@ function HomePage() {
         <div className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {/* WWDC25 */}
-            <div className="bg-[#f5f5f7] p-6 text-center">
-              <div className="mt-6 flex justify-center">
+            <div className="bg-[#f5f5f7] p-6 text-center relative h-[600px] overflow-hidden">
+              <div className="absolute inset-0 z-0">
                 <img 
-                  src="./images/WDC25.png" 
+                  src="./images/home/WDC25.png" 
                   alt="WWDC25" 
-                  className="w-full max-w-xs mx-auto"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="mt-4">
+              <div className="relative z-10 h-full flex flex-col justify-end">
                 <h3 className="text-xl font-medium text-[#1d1d1f]">Apple Worldwide Developers Conference.</h3>
                 <p className="text-xl text-[#1d1d1f] mb-4">Join us online June 9–13.</p>
                 <div className="flex justify-center">
@@ -96,32 +201,34 @@ function HomePage() {
             </div>
 
             {/* iPad Air */}
-            <div className="p-6 text-center" style={{background: 'linear-gradient(to bottom, #D6EDF6 0%, #ffffff 100%)'}}>
-              <div className="text-center">
-                <h3 className="text-4xl font-bold text-[#1d1d1f] mb-1">iPad <span className="font-normal text-[#0066cc]">air</span></h3>
-                <p className="text-xl text-[#1d1d1f] mb-4">Now supercharged by the M3 chip.</p>
-                <div className="flex justify-center space-x-6 font-medium mb-4">
-                  <a href="#" className="bg-[#0066cc] text-white px-5 py-2 rounded-full hover:bg-[#0055b3] transition-colors text-lg">Learn more</a>
-                  <a href="#" className="bg-white text-[#0066cc] border border-[#0066cc] px-5 py-2 rounded-full hover:bg-gray-50 transition-colors text-lg">Buy</a>
-                </div>
-              </div>
-              <div className="mt-2 flex justify-center">
+            <div className="p-6 text-center relative h-[600px] overflow-hidden" style={{background: 'linear-gradient(to bottom, #D6EDF6 0%, #ffffff 100%)'}}>
+              <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <img 
-                  src="./images/iPad_air_home.png" 
+                  src="./images/home/iPad_air_home.png" 
                   alt="iPad Air" 
-                  className="w-full max-w-md mx-auto"
+                  className="w-full max-w-md"
                 />
               </div>
-              <p className="text-1xl md:text-lg mt-4">
-                <span className="bg-gradient-to-r from-[#0066cc] via-[#9933cc] to-[#ff2d55] text-transparent bg-clip-text font-medium">Built for Apple Intelligence.</span>
-              </p>
+              <div className="relative z-10 h-full flex flex-col justify-between">
+                <div className="text-center pt-8">
+                  <h3 className="text-4xl font-bold text-[#1d1d1f] mb-1">iPad <span className="font-normal text-[#0066cc]">air</span></h3>
+                  <p className="text-xl text-[#1d1d1f] mb-4">Now supercharged by the M3 chip.</p>
+                  <div className="flex justify-center space-x-6 font-medium mb-4">
+                    <a href="#" className="bg-[#0066cc] text-white px-5 py-2 rounded-full hover:bg-[#0055b3] transition-colors text-lg">Learn more</a>
+                    <a href="#" className="bg-white text-[#0066cc] border border-[#0066cc] px-5 py-2 rounded-full hover:bg-gray-50 transition-colors text-lg">Buy</a>
+                  </div>
+                </div>
+                <p className="text-1xl md:text-lg mb-4">
+                  <span className="bg-gradient-to-r from-[#0066cc] via-[#9933cc] to-[#ff2d55] text-transparent bg-clip-text font-medium">Built for Apple Intelligence.</span>
+                </p>
+              </div>
             </div>
 
             {/* AirPods Pro 2 */}
-            <div className="bg-black p-6 text-center text-white relative h-[400px] overflow-hidden">
+            <div className="bg-black p-6 text-center text-white relative h-[600px] overflow-hidden">
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="./images/airpod2_home.jpg" 
+                  src="./images/home/airpod2_home.jpg" 
                   alt="AirPods Pro 2" 
                   className="w-full h-full object-cover"
                 />
@@ -137,10 +244,10 @@ function HomePage() {
             </div>
 
             {/* Accessibility */}
-            <div className="bg-[#f5f5f7] p-6 text-center relative h-[400px] overflow-hidden">
+            <div className="bg-[#f5f5f7] p-6 text-center relative h-[600px] overflow-hidden">
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="./images/accessibility_home.jpg" 
+                  src="./images/home/accessibility_home.jpg" 
                   alt="Accessibility" 
                   className="w-full h-full object-cover"
                 />
@@ -154,67 +261,59 @@ function HomePage() {
               </div>
             </div>
 
-            {/* TTrade in*/}
-            <div className="bg-[#f5f5f7] p-6 text-center">
-              <h3 className="text-3xl font-bold text-[#1d1d1f] mb-2">Trợ Năng</h3>
-              <p className="text-xl text-[#1d1d1f] mb-4">Sáng tạo phục vụ mọi người.</p>
-              <div className="flex justify-center space-x-6 text-[#0066cc] font-medium">
-                <a href="#" className="hover:underline">Tìm hiểu thêm</a>
-              </div>
-              <div className="mt-6 flex justify-center">
+            {/* Trade in*/}
+            <div className="bg-[#f5f5f7] p-6 text-center relative h-[600px] overflow-hidden">
+              <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://www.apple.com/v/home/be/images/promos/accessibility/promo_accessibility__fy0y10gn8uaa_large.jpg" 
-                  alt="Trợ Năng" 
-                  className="w-full max-w-xs mx-auto"
+                  src="./images/home/tradein_home.JPG" 
+                  alt="Trade In" 
+                  className="w-full h-full object-cover"
                 />
+              </div>
+              <div className="relative z-10 h-full flex flex-col justify-end">
+                <h3 className="text-4xl font-bold text-[#1d1d1f] mb-1 flex items-center justify-center">
+                  <FaApple className="mr-1" />
+                  <span>Trade In</span>
+                </h3>
+                <p className="text-xl text-[#1d1d1f] mb-4">Upgrade and save. It's that easy.</p>
+                <div className="flex justify-center">
+                  <a href="#" className="bg-[#0066cc] text-white px-5 py-2 rounded-full hover:bg-[#0055b3] transition-colors text-lg">Get yout estimate</a>
+                </div>
               </div>
             </div>
 
             {/* Card */}
-            <div className="bg-[#f5f5f7] p-6 text-center">
-              <h3 className="text-3xl font-bold text-[#1d1d1f] mb-2">Mac Studio</h3>
-              <div className="text-xl text-[#1d1d1f] mb-4">
-                <p>M4 Max và M3 Ultra.</p>
-                <p>Chọn siêu năng lực của bạn.</p>
-              </div>
-              <div className="flex justify-center space-x-6 text-[#0066cc] font-medium">
-                <a href="#" className="hover:underline">Tìm hiểu thêm</a>
-                <a href="#" className="hover:underline">Mua</a>
-              </div>
-              <div className="mt-6 flex justify-center">
+            <div className="bg-white p-6 text-center relative h-[600px] overflow-hidden">
+              <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://www.apple.com/v/home/be/images/promos/mac-studio/promo_mac_studio__gkz4p8n1omi6_large.jpg" 
-                  alt="Mac Studio" 
-                  className="w-full max-w-xs mx-auto"
+                  src="./images/home/applecard.JPG" 
+                  alt="Apple Card" 
+                  className="w-full h-full object-cover"
                 />
+              </div>
+              <div className="relative z-10 h-full flex flex-col justify-end">
+                <h3 className="text-4xl font-bold text-[#1d1d1f] mb-1 flex items-center justify-center">
+                  <FaApple className="mr-1" />
+                  <span>Card</span>
+                </h3>
+                <p className="text-xl text-[#1d1d1f] mb-4">Get up to 3% Daily Cash back with every purchase.</p>
+                <div className="flex justify-center space-x-6 font-medium">
+                  <a href="#" className="bg-[#0066cc] text-white px-5 py-2 rounded-full hover:bg-[#0055b3] transition-colors text-lg">Learn more</a>
+                  <a href="#" className="bg-white text-[#0066cc] border border-[#0066cc] px-5 py-2 rounded-full hover:bg-gray-50 transition-colors text-lg">Apply now</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Apple TV+ Promotion */}
-      <section className="py-6 md:py-8 bg-black text-white w-full mb-2">
-        <div className="w-full text-center">
-          <div className="mb-4">
-            <img 
-              src="https://www.apple.com/v/home/be/images/logos/tv-plus/logo_light__cfvl40z2nzau_large.png" 
-              alt="Apple TV+" 
-              className="h-12 mx-auto"
-            />
-          </div>
-          <p className="text-sm mt-4">
-            Apple TV+ yêu cầu đăng ký thuê bao.
-          </p>
-        </div>
-      </section>
+      {/* Image Carousel */}
+      <div className="max-w-screen-2xl mx-auto">
+      <ImageCarousel slides={slides} autoPlayInterval={5000} />
+      </div>
 
-      {/* Disclaimer */}
-      <section className="py-3 bg-[#f5f5f7] text-[#6e6e73] text-xs w-full">
-        <div className="max-w-5xl mx-auto px-4">
-          <p>Một số tính năng có thể thay đổi. Một số tính năng, ứng dụng và dịch vụ chỉ khả dụng ở một số khu vực hoặc ngôn ngữ.</p>
-        </div>
-      </section>
+      
+      
     </div>
   );
 }

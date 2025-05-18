@@ -5,87 +5,122 @@ function Footer() {
 
   const footerSections = [
     {
-      title: 'Mua Sắm và Tìm Hiểu',
+      title: 'Shop and Learn',
       links: [
-        { name: 'Cửa Hàng', path: '/' },
+        { name: 'Store', path: '/' },
         { name: 'Mac', path: '/mac' },
         { name: 'iPad', path: '/ipad' },
         { name: 'iPhone', path: '/iphone' },
         { name: 'Watch', path: '/watch' },
+        { name: 'Vision', path: '/vision' },
         { name: 'AirPods', path: '/airpods' },
-        { name: 'TV & Nhà', path: '/tv-home' },
+        { name: 'TV & Home', path: '/tv-home' },
         { name: 'AirTag', path: '/airtag' },
-        { name: 'Phụ Kiện', path: '/accessories' },
+        { name: 'Accessories', path: '/accessories' },
+        { name: 'Gift Cards', path: '/gift-cards' },
       ]
     },
     {
-      title: 'Dịch Vụ',
+      title: 'Apple Wallet',
       links: [
-        { name: 'Apple Music', path: '/apple-music' },
-        { name: 'Apple TV+', path: '/apple-tv-plus' },
-        { name: 'Apple Arcade', path: '/apple-arcade' },
-        { name: 'iCloud', path: '/icloud' },
-        { name: 'Apple One', path: '/apple-one' },
-        { name: 'Apple Books', path: '/apple-books' },
-        { name: 'Apple Podcasts', path: '/apple-podcasts' },
-        { name: 'App Store', path: '/app-store' },
+        { name: 'Wallet', path: '/wallet' },
+        { name: 'Apple Card', path: '/apple-card' },
+        { name: 'Apple Pay', path: '/apple-pay' },
+        { name: 'Apple Cash', path: '/apple-cash' },
       ]
     },
     {
-      title: 'Tài Khoản',
+      title: 'Account',
       links: [
-        { name: 'Quản Lý Tài Khoản Apple Của Bạn', path: '/account' },
-        { name: 'Tài Khoản Apple Store', path: '/store-account' },
+        { name: 'Manage Your Apple Account', path: '/account' },
+        { name: 'Apple Store Account', path: '/store-account' },
         { name: 'iCloud.com', path: 'https://www.icloud.com' },
+      ]
+    },
+    {
+      title: 'Entertainment',
+      links: [
+        { name: 'Apple One', path: '/apple-one' },
+        { name: 'Apple TV+', path: '/apple-tv-plus' },
+        { name: 'Apple Music', path: '/apple-music' },
+        { name: 'Apple Arcade', path: '/apple-arcade' },
+        { name: 'Apple Fitness+', path: '/apple-fitness-plus' },
+        { name: 'Apple News+', path: '/apple-news-plus' },
+        { name: 'Apple Podcasts', path: '/apple-podcasts' },
+        { name: 'Apple Books', path: '/apple-books' },
+        { name: 'App Store', path: '/app-store' },
       ]
     },
     {
       title: 'Apple Store',
       links: [
-        { name: 'Tìm Cửa Hàng', path: '/find-store' },
+        { name: 'Find a Store', path: '/find-store' },
         { name: 'Genius Bar', path: '/genius-bar' },
         { name: 'Today at Apple', path: '/today-at-apple' },
-        { name: 'Trại Hè Apple', path: '/apple-camp' },
-        { name: 'Ứng Dụng Apple Store', path: '/apple-store-app' },
+        { name: 'Group Reservations', path: '/reservations' },
+        { name: 'Apple Camp', path: '/apple-camp' },
+        { name: 'Apple Store App', path: '/apple-store-app' },
+        { name: 'Certified Refurbished', path: '/refurbished' },
         { name: 'Apple Trade In', path: '/trade-in' },
-        { name: 'Tài Chính', path: '/financing' },
-        { name: 'Tình Trạng Đơn Hàng', path: '/order-status' },
-        { name: 'Hỗ Trợ Mua Hàng', path: '/shopping-help' },
+        { name: 'Financing', path: '/financing' },
+        { name: 'Carrier Deals at Apple', path: '/carrier-deals' },
+        { name: 'Order Status', path: '/order-status' },
+        { name: 'Shopping Help', path: '/shopping-help' },
       ]
     },
     {
-      title: 'Dành Cho Doanh Nghiệp',
+      title: 'For Business',
       links: [
-        { name: 'Apple và Doanh Nghiệp', path: '/business' },
-        { name: 'Mua Sắm Cho Doanh Nghiệp', path: '/business-shop' },
+        { name: 'Apple and Business', path: '/business' },
+        { name: 'Shop for Business', path: '/business-shop' },
       ]
     },
     {
-      title: 'Cho Giáo Dục',
+      title: 'For Education',
       links: [
-        { name: 'Apple và Giáo Dục', path: '/education' },
-        { name: 'Mua Hàng Cho Bậc Đại Học', path: '/education-shop' },
+        { name: 'Apple and Education', path: '/education' },
+        { name: 'Shop for K-12', path: '/education-k12' },
+        { name: 'Shop for College', path: '/education-college' },
       ]
     },
     {
-      title: 'Giá Trị Cốt Lõi Của Apple',
+      title: 'For Healthcare',
       links: [
-        { name: 'Trợ Năng', path: '/accessibility' },
-        { name: 'Môi Trường', path: '/environment' },
-        { name: 'Quyền Riêng Tư', path: '/privacy' },
-        { name: 'Trách Nhiệm Nhà Cung Cấp', path: '/supplier-responsibility' },
+        { name: 'Apple in Healthcare', path: '/healthcare' },
+        { name: 'Mac in Healthcare', path: '/healthcare-mac' },
+        { name: 'Health on Apple Watch', path: '/healthcare-watch' },
+        { name: 'Health Records on iPhone and iPad', path: '/healthcare-records' },
       ]
     },
     {
-      title: 'Về Apple',
+      title: 'For Government',
+      links: [
+        { name: 'Shop for Government', path: '/government' },
+        { name: 'Shop for Veterans and Military', path: '/government-military' },
+      ]
+    },
+    {
+      title: 'Apple Values',
+      links: [
+        { name: 'Accessibility', path: '/accessibility' },
+        { name: 'Education', path: '/education-initiative' },
+        { name: 'Environment', path: '/environment' },
+        { name: 'Inclusion and Diversity', path: '/diversity' },
+        { name: 'Privacy', path: '/privacy' },
+        { name: 'Racial Equity and Justice', path: '/racial-equity-justice' },
+        { name: 'Supply Chain', path: '/supplier-responsibility' },
+      ]
+    },
+    {
+      title: 'About Apple',
       links: [
         { name: 'Newsroom', path: '/newsroom' },
-        { name: 'Lãnh Đạo Của Apple', path: '/leadership' },
-        { name: 'Cơ Hội Nghề Nghiệp', path: '/careers' },
-        { name: 'Nhà Đầu Tư', path: '/investors' },
-        { name: 'Đạo Đức & Tuân Thủ', path: '/ethics' },
-        { name: 'Sự Kiện', path: '/events' },
-        { name: 'Liên Hệ Apple', path: '/contact' },
+        { name: 'Apple Leadership', path: '/leadership' },
+        { name: 'Career Opportunities', path: '/careers' },
+        { name: 'Investors', path: '/investors' },
+        { name: 'Ethics & Compliance', path: '/ethics' },
+        { name: 'Events', path: '/events' },
+        { name: 'Contact Apple', path: '/contact' },
       ]
     },
   ];
@@ -102,19 +137,12 @@ function Footer() {
     <footer className="bg-[#f5f5f7] text-[#6e6e73] text-sm">
       {/* Main Footer Content */}
       <div className="max-w-5xl mx-auto px-4 py-12">
-        {/* Legal Notes */}
-        <div className="border-b border-[#d2d2d7] pb-5 mb-5">
-          <p className="text-xs leading-relaxed">
-            Giá hiển thị đã bao gồm tất cả các khoản thuế. Giao hàng miễn phí cho tất cả đơn hàng.
-          </p>
-        </div>
-
         {/* Desktop Footer Navigation */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-8">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 text-left">
           {footerSections.map((section, index) => (
-            <div key={index}>
+            <div key={index} className="flex flex-col items-start">
               <h3 className="font-semibold text-[#1d1d1f] mb-2">{section.title}</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 w-full text-left">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <a href={link.path} className="hover:underline text-xs">
@@ -132,7 +160,7 @@ function Footer() {
           {footerSections.map((section, index) => (
             <div key={index} className="border-b border-[#d2d2d7]">
               <button
-                className="w-full py-3 flex justify-between items-center text-[#1d1d1f] font-semibold"
+                className="w-full py-3 flex justify-between items-center text-[#1d1d1f] font-semibold text-left"
                 onClick={() => toggleSection(index)}
               >
                 {section.title}
@@ -151,7 +179,7 @@ function Footer() {
               {expandedSection === index && (
                 <ul className="pb-3 space-y-2">
                   {section.links.map((link) => (
-                    <li key={link.name}>
+                    <li key={link.name} className="text-left">
                       <a href={link.path} className="block py-1 text-xs hover:underline">
                         {link.name}
                       </a>
@@ -166,24 +194,24 @@ function Footer() {
         {/* More Ways to Shop */}
         <div className="mt-8 border-b border-[#d2d2d7] pb-5">
           <p className="mb-2">
-            Xem thêm cách để mua hàng: <a href="/find-store" className="text-[#0066cc] hover:underline">Tìm cửa hàng bán lẻ</a> gần bạn. Hoặc gọi 1800-1192.
+            More ways to shop: <a href="/find-store" className="text-[#0066cc] hover:underline">Find an Apple Store</a> or <a href="/other-retailer" className="text-[#0066cc] hover:underline">other retailer</a> near you. Or call 1-800-MY-APPLE (1-800-692-7753).
           </p>
         </div>
 
         {/* Copyright and Legal Links */}
         <div className="mt-5 flex flex-col md:flex-row md:justify-between text-xs">
           <div className="mb-4 md:mb-0">
-            <p>Bản quyền © 2025 Apple Inc. Bảo lưu mọi quyền.</p>
+            <p>Copyright © 2025 Apple Inc. All rights reserved.</p>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            <a href="/privacy" className="hover:underline">Chính Sách Quyền Riêng Tư</a>
-            <a href="/terms" className="hover:underline">Điều Khoản Sử Dụng</a>
-            <a href="/sales-refunds" className="hover:underline">Bán Hàng và Hoàn Tiền</a>
-            <a href="/legal" className="hover:underline">Pháp Lý</a>
-            <a href="/sitemap" className="hover:underline">Sơ Đồ Trang Web</a>
+            <a href="/privacy" className="hover:underline">Privacy Policy</a>
+            <a href="/terms" className="hover:underline">Terms of Use</a>
+            <a href="/sales-refunds" className="hover:underline">Sales and Refunds</a>
+            <a href="/legal" className="hover:underline">Legal</a>
+            <a href="/sitemap" className="hover:underline">Site Map</a>
           </div>
           <div className="mt-4 md:mt-0">
-            <p>Việt Nam</p>
+            <p>United States</p>
           </div>
         </div>
       </div>
