@@ -4,32 +4,32 @@ const features = [
   {
     title: 'Apple Intelligence and macOS',
     subtitle: 'Easy to use. Easy to love.',
-    image: '/images/mac-feature-1.png', // Thay bằng ảnh thật hoặc placeholder
-    bg: 'bg-gray-100',
+    image: '/images/Mac/mac_intelligence_siri__do2ke43yic02_xlarge.jpg', // Thay bằng ảnh thật hoặc placeholder
+    bg: 'text-black',
   },
   {
     title: 'Performance and Battery Life',
     subtitle: 'Go fast. Go far.',
-    image: '/images/mac-feature-2.png',
-    bg: 'bg-black text-white',
+    image: '/images/Mac/mac_performance__dh5hyac1zf8m_xlarge.jpg',
+    bg: 'text-white',
   },
   {
     title: 'Mac and iPhone',
     subtitle: 'Dream team.',
-    image: '/images/mac-feature-3.png',
-    bg: 'bg-green-50',
+    image: '/images/Mac/mac_iphone__gh1tblkt6bqm_xlarge.jpg',
+    bg: 'text-black',
   },
   {
     title: 'Compatibility',
     subtitle: 'Mac runs your favorite apps.',
-    image: '/images/mac-feature-4.png',
-    bg: 'bg-sky-200',
+    image: '/images/Mac/mac_compatibility__cu59oukz81ci_xlarge.jpg',
+    bg: 'text-black',
   },
   {
     title: 'Privacy and Security',
     subtitle: "Your business is nobody else's.",
-    image: '/images/mac-feature-5.png',
-    bg: 'bg-gradient-to-r from-pink-400 to-purple-400 text-white',
+    image: '/images/Mac/mac_security__gfwda10khdym_xlarge.jpg',
+    bg: 'text-white',
   },
 ];
 
@@ -77,13 +77,18 @@ const MacFeatureCards = () => {
           {features.map((f, idx) => (
             <div
               key={idx}
-              className={`min-w-[320px] max-w-xs rounded-3xl p-6 flex-shrink-0 ${f.bg} relative`}
-              style={{ height: 480 }}
+              className={`min-w-[320px] max-w-xs rounded-3xl p-0 flex-shrink-0 overflow-hidden relative ${f.bg} cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+              style={{
+                height: 600,
+                backgroundImage: `url(${f.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
             >
-              <div className="mb-2 text-sm font-semibold opacity-80">{f.title}</div>
-              <div className="mb-4 text-2xl font-bold">{f.subtitle}</div>
-              <div className="w-full h-64 bg-white/30 rounded-2xl flex items-center justify-center mb-2 overflow-hidden">
-                <img src={f.image} alt={f.title} className="max-h-full max-w-full object-contain" />
+              <div className="absolute inset-0 bg-black/10" />
+              <div className="relative z-10 flex flex-col items-start justify-start h-full p-8">
+                <div className="mb-2 text-sm font-semibold opacity-90 text-black drop-shadow-lg text-left">{f.title}</div>
+                <div className="mb-4 text-2xl font-bold text-black drop-shadow-lg text-left">{f.subtitle}</div>
               </div>
             </div>
           ))}

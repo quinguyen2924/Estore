@@ -57,7 +57,10 @@ function ProductCarousel() {
         style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {productList.map((item, idx) => (
-          <div key={idx} className="flex flex-col items-center min-w-[100px]">
+          <div
+            key={idx}
+            className="flex flex-col items-center min-w-[100px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          >
             <img src={item.img} alt={item.name} className="w-20 h-20 object-contain mb-2" />
             <span className="text-sm font-semibold text-gray-900">{item.name}</span>
           </div>
@@ -119,7 +122,10 @@ function ProductCardCarousel() {
         style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {cardList.map((item, idx) => (
-          <div key={idx} className="min-w-[340px] max-w-[340px] h-[420px] bg-white rounded-3xl shadow-lg flex items-center justify-center p-6">
+          <div
+            key={idx}
+            className="min-w-[340px] max-w-[340px] h-[420px] bg-white rounded-3xl shadow-lg flex items-center justify-center p-6 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          >
             <img src={item.img} alt="product" className="object-contain max-h-full max-w-full rounded-2xl" />
           </div>
         ))}
