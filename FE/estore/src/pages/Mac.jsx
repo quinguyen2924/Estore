@@ -4,24 +4,8 @@ import MacNavBar from '../components/MacNavBar';
 import MacFeatureCards from '../components/MacFeatureCards';
 import Footer from '../components/layout/Footer';
 import MacLineupSegment from '../components/MacLineupSegment';
-
-const accordionData = [
-  {
-    title: 'Mac and iPhone',
-    content: `Answer calls or messages from your iPhone directly on your Mac. See and control what's on your iPhone from your Mac with iPhone Mirroring. Use Universal Clipboard to copy images, video, or text from your iPhone, then paste into another app on your nearby Mac. And thanks to iCloud, you can access your files from either your iPhone or your Mac. And so much more.`,
-    image: '/images/Mac/Screenshot 2025-05-19 182900.png',
-  },
-  {
-    title: 'Mac and iPad',
-    content: `Use your iPad as a second display for your Mac with Sidecar. Draw with Apple Pencil on your iPad and see it on your Mac. Start an email on your iPad and finish it on your Mac. Universal Control lets you use a single mouse and keyboard between your Mac and iPad.`,
-    image: '/images/Mac/Screenshot 2025-05-19 183121.png',
-  },
-  {
-    title: 'Mac and Apple Watch',
-    content: `Unlock your Mac automatically when you're wearing your Apple Watch. Use Apple Pay on your Mac and confirm with your watch. And get notifications and calls from your iPhone right on your Mac and Apple Watch.`,
-    image: '/images/Mac/Screenshot 2025-05-19 183153.png',
-  },
-];
+import MacEssentials from '../components/MacEssentials';
+import MacSignificantOthers from '../components/MacSignificantOthers';
 
 function Accordion() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -65,37 +49,6 @@ function Accordion() {
             className="max-h-[340px] w-auto object-contain drop-shadow-xl transition-all duration-300"
             style={{ minWidth: 200 }}
           />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function MacEssentials() {
-  return (
-    <section className="w-full max-w-7xl mx-auto py-16 px-4">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-5xl font-bold text-gray-900 text-left">Mac essentials.</h2>
-        <a href="#" className="text-blue-600 text-base font-medium hover:underline">All Mac accessories &gt;</a>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Card 1 */}
-        <div className="bg-[#fafafa] rounded-3xl p-8 flex flex-col items-center justify-between min-h-[420px]">
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Mac accessories</h3>
-            <p className="text-gray-700 text-base mb-4 text-center">Explore keyboards, mice, and other essentials.</p>
-            <a href="#" className="text-blue-600 font-medium hover:underline mb-4">Shop Mac accessories &gt;</a>
-          </div>
-          <img src="/images/Mac/essentials_accessories__dglhsic54owi_xlarge.jpg" alt="Mac accessories" className="w-full max-w-[380px] object-contain mt-4" />
-        </div>
-        {/* Card 2 */}
-        <div className="bg-[#fafafa] rounded-3xl p-8 flex flex-col items-center justify-between min-h-[420px]">
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Studio Display</h3>
-            <p className="text-gray-700 text-base mb-4 text-center">The 27-inch 5K Retina display pairs beautifully with any Mac.</p>
-            <a href="#" className="text-blue-600 font-medium hover:underline mb-4">Learn more &gt;</a>
-          </div>
-          <img src="/images/Mac/essentials_display__bk3i351qm0c2_xlarge.jpg" alt="Studio Display" className="w-full max-w-[380px] object-contain mt-4" />
         </div>
       </div>
     </section>
@@ -183,8 +136,8 @@ const Mac = () => {
         <MacFeatureCards />
         {/* Section lineup segment switch */}
         <MacLineupSegment />
-        {/* Section Accordion */}
-        <Accordion />
+        {/* Section Significant others */}
+        <MacSignificantOthers />
         {/* Section Mac essentials */}
         <MacEssentials />
         {/* Các section khác của trang Mac sẽ đặt ở đây */}
