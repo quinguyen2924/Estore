@@ -16,7 +16,7 @@ function Header() {
     { name: 'Watch', path: '/watch' },
     { name: 'AirPods', path: '/airpods' },
     { name: 'TV & Nhà', path: '/tv-home' },
-    { name: 'Giải Trí', path: '/entertainment' },
+    { name: 'Giải Trí', path: '/services' },
     { name: 'Phụ Kiện', path: '/accessories' },
     { name: 'Hỗ Trợ', path: '/support' },
   ];
