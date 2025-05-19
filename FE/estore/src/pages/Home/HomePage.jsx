@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaApple } from "react-icons/fa";
-import ImageCarousel from "../components/image_carousel"
+import ImageCarousel from "./image_carousel"
 function HomePage() {
   const slides = [
     {

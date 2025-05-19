@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import Header from '../components/Header';
+import Header from '../components/layout/Header';
 import MacNavBar from '../components/MacNavBar';
 import MacFeatureCards from '../components/MacFeatureCards';
-import Footer from '../components/Footer';
+import Footer from '../components/layout/Footer';
 
 const Mac = () => {
   // Video control

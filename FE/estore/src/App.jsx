@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import HomePage from './pages/HomePage'
-import Stores from './pages/Stores'
-import Mac from './pages/Mac'
+import './index.css'
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+import routes from './routes'
 
 function App() {
   return (
@@ -14,9 +12,9 @@ function App() {
         <div className="flex-1 pt-[88px] md:pt-11 w-full">
           <div className="w-full">
             <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/store" element={<Stores />} />
-              <Route path="/mac" element={<Mac />} />
+              {routes.map((route, idx) => (
+                <Route key={idx} path={route.path} element={route.element} />
+              ))}
             </Routes>
           </div>
         </div>
