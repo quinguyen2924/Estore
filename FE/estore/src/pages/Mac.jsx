@@ -6,6 +6,7 @@ import Footer from '../components/layout/Footer';
 import MacLineupSegment from '../components/MacLineupSegment';
 import MacEssentials from '../components/MacEssentials';
 import MacSignificantOthers from '../components/MacSignificantOthers';
+import { macData } from '../data/ProductData';
 
 function Accordion() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -74,9 +75,9 @@ const Mac = () => {
   return (
     <div className="min-h-screen flex flex-col w-full bg-white">
       <Header />
-      <MacNavBar />
+      <MacNavBar navItems={macData.navItems} />
       <main className="flex-1">
-        {/* Section tiêu đề và slogan sát container */}
+        {/* Section tiêu đề và slogan */}
         <section className="max-w-7xl mx-auto w-full flex flex-row justify-between items-start py-16">
           <div>
             <h1 className="text-7xl font-bold text-gray-900">Mac</h1>
@@ -86,7 +87,8 @@ const Mac = () => {
             <span>Mac can do it.</span>
           </div>
         </section>
-        {/* Section video bo góc và cách hai bên trên cả desktop và mobile */}
+
+        {/* Section video */}
         <section className="relative max-w-7xl mx-auto w-full flex justify-center items-center bg-[#faf7f4] px-8 py-0 video-section-responsive" style={{borderRadius: 24, overflow: 'hidden'}}>
           <video
             ref={videoRef}
@@ -132,18 +134,12 @@ const Mac = () => {
             }
           `}</style>
         </section>
-        {/* Section feature cards */}
-        <MacFeatureCards />
-        {/* Section lineup segment switch */}
-        <MacLineupSegment />
-        {/* Section Significant others */}
-        <MacSignificantOthers />
-        {/* Section Mac essentials */}
-        <MacEssentials />
-        {/* Các section khác của trang Mac sẽ đặt ở đây */}
-        <div className="max-w-7xl mx-auto py-16 text-center text-gray-400 text-xl">
-          {/* (Nội dung trang Mac sẽ hiển thị ở đây) */}
-        </div>
+
+        {/* Các section khác */}
+        <MacFeatureCards cards={macData.featureCards} title="Get to know Mac." />
+        <MacLineupSegment segments={macData.lineupSegments} title="Explore the lineup." />
+        <MacSignificantOthers items={macData.significantOthers} title="Accessories and more." />
+        <MacEssentials items={macData.essentials} />
       </main>
       <Footer />
     </div>
