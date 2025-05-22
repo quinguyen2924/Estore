@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MacEssentials = ({ items }) => {
+const MacEssentials = ({items,title}) => {
   return (
     <section className="w-full max-w-7xl mx-auto py-16 px-4">
-      <h2 className="text-5xl font-bold text-gray-900 mb-8 text-left">Mac essentials.</h2>
+      <h2 className="text-5xl font-bold text-gray-900 mb-8 text-left">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {items.map((item, idx) => (
           <div
@@ -16,14 +16,17 @@ const MacEssentials = ({ items }) => {
               backgroundPosition: 'center',
             }}
           >
+            {/* Lớp overlay làm tối ảnh nền tổng thể */}
             <div className="absolute inset-0 bg-black/10" />
-            <div className="relative z-10 flex flex-col items-start justify-start h-full p-8">
-              <div className="mb-2 text-sm font-semibold opacity-90 text-black drop-shadow-lg text-left">{item.title}</div>
+
+            {/* Phần chữ nằm trên cùng, có nền đen mờ */}
+            <div className="absolute top-0 left-0 right-0 bg-black bg-opacity-50 p-6 rounded-b-3xl z-20">
+              <div className="text-sm font-semibold opacity-90 text-white drop-shadow-lg">{item.title}</div>
               {item.content && (
-                <div className="mb-4 text-lg text-black drop-shadow-lg text-left">{item.content}</div>
+                <div className="text-lg text-white drop-shadow-lg">{item.content}</div>
               )}
               {item.description && (
-                <div className="mb-4 text-lg text-black drop-shadow-lg text-left">{item.description}</div>
+                <div className="text-lg text-white drop-shadow-lg">{item.description}</div>
               )}
             </div>
           </div>
@@ -33,4 +36,4 @@ const MacEssentials = ({ items }) => {
   );
 };
 
-export default MacEssentials; 
+export default MacEssentials;

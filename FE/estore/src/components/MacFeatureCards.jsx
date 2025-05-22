@@ -34,7 +34,7 @@ const ProductFeatureCards = ({ cards, title = "Get to know our products." }) => 
   };
 
   return (
-    <section className="max-w-7xl mx-auto w-full py-16 px-4">
+    <section className="max-w-7xl mx-auto w-full py-16 px-4 text-left">
       <h2 className="text-4xl md:text-5xl font-bold mb-8">{title}</h2>
       <div className="relative">
         <div
@@ -55,7 +55,9 @@ const ProductFeatureCards = ({ cards, title = "Get to know our products." }) => 
               <div className="absolute inset-0 bg-black/10" />
               <div className="relative z-10 flex flex-col items-start justify-start h-full p-8">
                 <div className="mb-2 text-sm font-semibold opacity-90 text-black drop-shadow-lg text-left">{f.title}</div>
+                <div className="mb-2 text-sm font-semibold opacity-90 text-white drop-shadow-lg text-left">{f.title2}</div>
                 <div className="mb-4 text-2xl font-bold text-black drop-shadow-lg text-left">{f.description}</div>
+                <div className="mb-4 text-2xl font-bold text-white drop-shadow-lg text-left">{f.description2}</div>
               </div>
             </div>
           ))}

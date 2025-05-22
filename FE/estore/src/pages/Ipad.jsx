@@ -7,7 +7,7 @@ import MacLineupSegment from '../components/MacLineupSegment';
 import MacEssentials from '../components/MacEssentials';
 import MacSignificantOthers from '../components/MacSignificantOthers';
 import { ipadData } from '../data/ProductData';
-
+import IpadLineupSegment from '../components/IpadLineupSegment';
 const iPad = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -34,22 +34,24 @@ const iPad = () => {
             <h1 className="text-7xl font-bold text-gray-900">Ipad</h1>
           </div>
           <div className="text-2xl font-semibold text-gray-900 text-right flex flex-col justify-center">
-            <span>If you can dream it,</span>
-            <span>Mac can do it.</span>
+            <span>Touch, draw, and type</span>
+            <span>on one magical device.</span>
           </div>
         </section>
 
         {/* Video Section */}
         <section className="w-full max-w-7xl mx-auto py-16 px-4">
           <div className="relative">
-            <video
-              ref={videoRef}
-              className="w-full rounded-3xl"
-              poster="/images/ipad/ipad-poster.jpg"
-              onClick={handlePlayPause}
-            >
-              <source src="/videos/ipad/ipad-hero.mp4" type="video/mp4" />
-            </video>
+          <video
+            ref={videoRef}
+            src="/images/x1fba949bf_large.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-[500px] object-cover video-element-responsive"
+            style={{borderRadius: 24}}
+          />
             <button
               onClick={handlePlayPause}
               className="absolute bottom-8 right-8 w-12 h-12 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors"
@@ -71,13 +73,14 @@ const iPad = () => {
         <ProductFeatureCards cards={ipadData.featureCards} title="Get to know iPad." />
 
         {/* Lineup Segment */}
-        <MacLineupSegment segments={ipadData.lineupSegments} title="Which iPad is right for you?" />
+        <IpadLineupSegment title="Get to know iPad." />
+
 
         {/* Significant Others */}
         <MacSignificantOthers items={ipadData.significantOthers} title="Accessories and more." />
 
         {/* Essentials */}
-        <MacEssentials items={ipadData.essentials} />
+        <MacEssentials items={ipadData.essentials} title="Ipad Essential." />
       </main>
       <Footer />
     </div>

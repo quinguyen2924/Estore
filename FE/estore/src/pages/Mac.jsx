@@ -139,7 +139,7 @@ const Mac = () => {
         <MacFeatureCards cards={macData.featureCards} title="Get to know Mac." />
         <MacLineupSegment segments={macData.lineupSegments} title="Explore the lineup." />
         <MacSignificantOthers items={macData.significantOthers} title="Accessories and more." />
-        <MacEssentials items={macData.essentials} />
+        <MacEssentials items={macData.essentials} title="Mac Essential" />
       </main>
       <Footer />
     </div>
