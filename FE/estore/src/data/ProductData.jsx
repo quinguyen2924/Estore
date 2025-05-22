@@ -1,32 +1,79 @@
 export const macData = {
   navItems: [
     {
-      label: 'MacBook Pro',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/>
-          <rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/>
-        </svg>
-      ),
-      link: '/mac/macbook-pro'
-    },
-    {
       label: 'MacBook Air',
       icon: (
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/>
-          <rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/>
-        </svg>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/></svg>
       ),
-      link: '/mac/macbook-air'
+      isNew: true,
     },
-    { title: 'iMac', link: '/mac/imac' },
-    { title: 'Mac mini', link: '/mac/mac-mini' },
-    { title: 'Mac Studio', link: '/mac/mac-studio' },
-    { title: 'Mac Pro', link: '/mac/mac-pro' },
-    { title: 'Displays', link: '/mac/displays' },
+    {
+      label: 'MacBook Pro',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/><rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/></svg>
+      ),
+    },
+    {
+      label: 'iMac',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="10" width="24" height="16" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="16" y="28" width="8" height="2" rx="1" fill="#222"/></svg>
+      ),
+    },
+    {
+      label: 'Mac mini',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="12" y="18" width="16" height="4" rx="2" stroke="#222" strokeWidth="1.5"/></svg>
+      ),
+    },
+    {
+      label: 'Mac Studio',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="10" y="16" width="20" height="8" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="14" y="26" width="12" height="2" rx="1" fill="#222"/></svg>
+      ),
+      isNew: true,
+    },
+    {
+      label: 'Mac Pro',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="14" y="10" width="12" height="20" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="18" y="30" width="4" height="2" rx="1" fill="#222"/></svg>
+      ),
+    },
+    {
+      label: 'Help Me Choose',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="10" stroke="#222" strokeWidth="1.5"/><text x="20" y="25" textAnchor="middle" fontSize="12" fill="#222">?</text></svg>
+      ),
+    },
+    {
+      label: 'Compare',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="10" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="22" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5" strokeDasharray="4 2"/></svg>
+      ),
+    },
+    {
+      label: 'Displays',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="14" width="10" height="10" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="22" y="16" width="10" height="8" rx="2" stroke="#222" strokeWidth="1.5"/></svg>
+      ),
+    },
+    {
+      label: 'Accessories',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/><rect x="28" y="28" width="4" height="4" rx="2" fill="#222"/></svg>
+      ),
+    },
+    {
+      label: 'Sequoia',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" fill="#222"/><text x="20" y="25" textAnchor="middle" fontSize="10" fill="#fff">macOS</text></svg>
+      ),
+    },
+    {
+      label: 'Shop Mac',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="18" width="24" height="8" rx="2" stroke="#222" strokeWidth="1.5"/><rect x="14" y="26" width="12" height="2" rx="1" fill="#222"/></svg>
+      ),
+    },
   ],
   laptops: [
     {
@@ -182,18 +229,18 @@ export const macData = {
     {
       title: 'Mac and IPhone',
       content: `Answer calls or messages from your iPhone directly on your Mac. See and control what’s on your iPhone from your Mac with iPhone Mirroring. Use Universal Clipboard to copy images, video, or text from your iPhone, then paste into another app on your nearby Mac. And thanks to iCloud, you can access your files from either your iPhone or your Mac. And so much more.`,
-      image: '/images/Mac/Screenshot 2025-05-19 182900.png',
+      image: '/images/Mac/world_mac_iphone__mr1xfuchl56e_medium.jpg',
     },
     {
       title: 'Mac and iPad',
       content: 'Sketch on your iPad and have it appear instantly on your Mac. Or use your iPad as a second display, so you can work on one screen while you reference the other. You can even start a Final Cut Pro project on your iPad and continue it on your Mac.',
-      image: '/images/Mac/Screenshot 2025-05-19 183121.png',
+      image: '/images/Mac/world_mac_ipad__d9mjiijkul0m_medium.jpg',
       link: '/apple-one'
     },
     {
       title: 'Mac and Apple Watch',
       content: 'Automatically log in to your Mac when you’re wearing your Apple Watch with Auto Unlock. No password typing required.',
-      image: '/images/Mac/Screenshot 2025-05-19 183153.png',
+      image: '/images/Mac/world_mac_watch__dckn1orrpkqe_medium.jpg',
       link: '/apple-music'
     },
     // Add more significant others as needed
@@ -206,19 +253,17 @@ export const ipadData = {
       label: 'iPad Pro',
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/>
-          <rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/>
+          <rect x="8" y="10" width="24" height="20" rx="2" stroke="#222" strokeWidth="1.5" />
         </svg>
       ),
+      isNew: true,
     },
     {
       label: 'iPad Air',
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/>
-          <rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/>
+          <rect x="8" y="10" width="24" height="20" rx="2" stroke="#222" strokeWidth="1.5" />
+          <circle cx="28" cy="20" r="1.5" fill="#222" />
         </svg>
       ),
     },
@@ -226,9 +271,7 @@ export const ipadData = {
       label: 'iPad',
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/>
-          <rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/>
+          <rect x="10" y="10" width="20" height="20" rx="2" stroke="#222" strokeWidth="1.5" />
         </svg>
       ),
     },
@@ -236,9 +279,16 @@ export const ipadData = {
       label: 'iPad mini',
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="6" y="12" width="28" height="14" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="10" y="28" width="20" height="2" rx="1" fill="#222"/>
-          <rect x="12" y="16" width="16" height="2" rx="1" fill="#222"/>
+          <rect x="14" y="10" width="12" height="20" rx="2" stroke="#222" strokeWidth="1.5" />
+        </svg>
+      ),
+    },
+    {
+      label: 'Compare',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="10" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5"/>
+          <rect x="22" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5" strokeDasharray="4 2"/>
         </svg>
       ),
     },
@@ -246,8 +296,9 @@ export const ipadData = {
       label: 'Apple Pencil',
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <path d="M20 5L35 20L20 35L5 20L20 5Z" stroke="#222" strokeWidth="1.5"/>
-          <path d="M20 5L35 20" stroke="#222" strokeWidth="1.5"/>
+          <path d="M10 30 L30 10" stroke="#222" strokeWidth="1.5"/>
+          <circle cx="10" cy="30" r="1.5" fill="#222"/>
+          <circle cx="30" cy="10" r="1.5" fill="#222"/>
         </svg>
       ),
     },
@@ -256,20 +307,45 @@ export const ipadData = {
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
           <rect x="8" y="14" width="24" height="12" rx="2" stroke="#222" strokeWidth="1.5"/>
-          <rect x="12" y="18" width="4" height="4" rx="1" fill="#222"/>
-          <rect x="18" y="18" width="4" height="4" rx="1" fill="#222"/>
-          <rect x="24" y="18" width="4" height="4" rx="1" fill="#222"/>
+          <rect x="12" y="18" width="16" height="4" rx="1" fill="#222"/>
         </svg>
       ),
-    }
+    },
+    {
+      label: 'iPadOS',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="12" fill="#222"/>
+          <text x="20" y="25" textAnchor="middle" fontSize="10" fill="#fff">OS</text>
+        </svg>
+      ),
+    },
+    {
+      label: 'Accessories',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/>
+          <rect x="28" y="28" width="4" height="4" rx="2" fill="#222"/>
+        </svg>
+      ),
+    },
+    {
+      label: 'Shop iPad',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="8" y="18" width="24" height="8" rx="2" stroke="#222" strokeWidth="1.5"/>
+          <rect x="14" y="26" width="12" height="2" rx="1" fill="#222"/>
+        </svg>
+      ),
+    },
   ],
   lineupSegments: [
     {
-      name: "iPad Pro 11\" and 12.9\"",
-      chip: "M2 chip",
-      desc: "Supercharged by M2",
-      price: "From $799 or $66.58/mo. for 12 mo.**",
-      img: "/images/ipad/ipad-pro.png",
+      name: "iPad Pro",
+      chip: "",
+      desc: "The ultimate iPad experience with the most advanced technology.",
+      price: "From $999 or $83.25/mo. for 12 mo.*",
+      img: "/images/Ipad/ipad_pro_f1345e8ae.png",
       isNew: true,
     },
     {
@@ -277,41 +353,27 @@ export const ipadData = {
       chip: "M1 chip",
       desc: "Colorful. Powerful. Wonderful.",
       price: "From $599 or $49.91/mo. for 12 mo.**",
-      img: "/images/ipad/ipad-air.png",
+      img: "/images/Ipad/ipad_air_103528cc7.png",
       isNew: false,
     },
+   
     {
       name: "iPad",
-      chip: "A14 Bionic chip",
-      desc: "Lovable. Drawable. Magical.",
-      price: "From $449 or $37.41/mo. for 12 mo.**",
-      img: "/images/ipad/ipad.png",
+      chip: "",
+      desc: "The colorful, all‑screen iPad for the things you do every day.",
+      price: "From $349 or $29.08/mo. for 12 mo.*",
+      img: "/images/Ipad/ipad_11th_gen_3e2bffc1d.png",
       isNew: false,
     },
     {
       name: "iPad mini",
-      chip: "A15 Bionic chip",
-      desc: "Small wonder.",
-      price: "From $499 or $41.58/mo. for 12 mo.**",
-      img: "/images/ipad/ipad-mini.png",
+      chip: "",
+      desc: "The full iPad experience in an ultraportable design..",
+      price: "From $499 or $41.58/mo. for 12 mo.*",
+      img: "/images/Ipad/ipad_mini_f19d08515.png",
       isNew: false,
     },
-    {
-      name: "Apple Pencil",
-      chip: "2nd generation",
-      desc: "The perfect companion for iPad.",
-      price: "From $129",
-      img: "/images/ipad/apple-pencil.png",
-      isNew: false,
-    },
-    {
-      name: "Magic Keyboard",
-      chip: "Trackpad included",
-      desc: "A perfect typing experience.",
-      price: "From $299",
-      img: "/images/ipad/magic-keyboard.png",
-      isNew: false,
-    },
+   
   ],
   featureCards: [
     {
@@ -348,31 +410,31 @@ export const ipadData = {
 
   significantOthers: [
     {
-      title: 'Apple Pencil',
-      content: 'The perfect companion for iPad. Draw, sketch, and write with precision and ease.',
-      image: '/images/ipad/apple-pencil.png'
+      title: 'IPad and ỊPhone',
+      content: 'iPad is perfect for taking the content you capture on iPhone and bringing it to life on an immersive canvas. You can shoot videos and photos on your iPhone and use the large display of your iPad to edit, add animations, and more. You can also pick up wherever you left off with Handoff.',
+      image: '/images/Ipad/ipad_iphone_e2b60c1df.jpg'
     },
     {
-      title: 'Magic Keyboard',
-      content: 'A perfect typing experience and built-in trackpad.',
-      image: '/images/ipad/magic-keyboard.png'
+      title: 'IPad and Mac',
+      content: 'iPad and Mac are designed to work together to form the ultimate creative setup. Sketch on your iPad and have it appear instantly on your Mac with Sidecar. Then use your iPad for drawing or editing with Apple Pencil or as a second display. Extend your workflow to new places, and when you return to your desk, Universal Control allows you to use one mouse or trackpad seamlessly across both devices.',
+      image: '/images/Ipad/ipad_mac_6607f276f.jpg'
     },
     {
-      title: 'Smart Keyboard Folio',
-      content: 'A lightweight keyboard that protects your iPad.',
-      image: '/images/ipad/smart-keyboard.png'
+      title: 'IPad and Apple Watch',
+      content: 'iPad is a great way to optimize your workouts while tracking your progress on Apple Watch. See personal metrics from Apple Watch integrated on the screen of your iPad in real time. The sensors in Apple Watch combine with advanced algorithms to provide data that keeps you motivated. And see it all come together on your Health app on iPad.',
+      image: '/images/Ipad/ipad_watch_862ad6044.jpg'
     }
   ],
   essentials: [
     {
-      title: 'AppleCare+',
-      content: 'Get unlimited repairs for accidental damage protection.',
-      image: '/images/ipad/applecare.jpg'
+      title: 'Apple Pencil',
+      content: 'Dream it up. Jot it down.',
+      image: '/images/Ipad/pencil_56323cd1e.png'
     },
     {
-      title: 'Apple Trade In',
-      content: 'Trade in your eligible device for credit toward your next purchase.',
-      image: '/images/ipad/trade-in.jpg'
+      title: 'Keyboards for iPad',
+      content: 'Type it out. Take it with you.',
+      image: '/images/Ipad/keyboard_d83e063b8.png'
     }
   ]
 }; 

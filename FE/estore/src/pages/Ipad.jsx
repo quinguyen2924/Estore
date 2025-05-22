@@ -77,10 +77,10 @@ const iPad = () => {
 
 
         {/* Significant Others */}
-        <MacSignificantOthers items={ipadData.significantOthers} title="Accessories and more." />
+        <MacSignificantOthers items={ipadData.significantOthers} title="Significant others." />
 
         {/* Essentials */}
-        <MacEssentials items={ipadData.essentials} title="Ipad Essential." />
+        <MacEssentials items={ipadData.essentials} title="Ipad essentials." />
       </main>
       <Footer />
     </div>

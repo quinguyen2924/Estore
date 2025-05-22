@@ -33,7 +33,7 @@ const MacSignificantOthers = ({ items, title = "Significant others." }) => {
                   openIndex === idx ? 'max-h-[500px] opacity-100 py-2 pb-6' : 'max-h-0 opacity-0 py-0 pb-0'
                 }`}
               >
-                <div className="text-base text-gray-700">
+                <div className="text-base text-gray-700 text-left">
                   {item.content}
                 </div>
               </div>
