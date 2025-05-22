@@ -3,6 +3,164 @@
 import { useState, useRef, useEffect } from "react"
 import { Pause, Play } from "lucide-react"
 
+// Logo SVGs
+const AppleTVLogo = () => (
+  <svg className="w-12 h-6" viewBox="0 0 38 16" fill="white">
+    <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
+    <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
+    <path d="M19.89,2.55H17.8V13.45h2.09Z" />
+    <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
+    <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
+  </svg>
+)
+const AppleMusicLogo = () => (
+  <svg className="w-10 h-5" viewBox="0 0 38 16" fill="white">
+    <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
+    <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
+    <path d="M19.89,2.55H17.8V13.45h2.09Z" />
+    <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
+    <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
+  </svg>
+)
+const AppleArcadeLogo = () => (
+  <svg className="w-12 h-6" viewBox="0 0 38 16" fill="white">
+    <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
+    <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
+    <path d="M19.89,2.55H17.8V13.45h2.09Z" />
+    <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
+    <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
+  </svg>
+)
+const AppleFitnessLogo = () => (
+  <svg className="w-12 h-6" viewBox="0 0 38 16" fill="white">
+    <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
+    <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
+    <path d="M19.89,2.55H17.8V13.45h2.09Z" />
+    <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
+    <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
+  </svg>
+)
+
+function ReusableCard({ item, logo, buttonText, hrefPrefix, size = 'large', extraInfo }) {
+  const [isHovered, setIsHovered] = useState(false)
+  const widthClass = size === 'small' ? 'w-[180px]' : 'w-[280px]'
+  const aspectClass = size === 'small' ? 'aspect-square' : 'aspect-[3/2]'
+  return (
+    <div
+      className={`relative flex-shrink-0 ${widthClass} snap-start`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className={`relative overflow-hidden rounded-lg ${aspectClass}`}>
+        <div
+          className="w-full h-full bg-cover bg-center transition-transform duration-300"
+          style={{
+            backgroundImage: `url(${item.image})`,
+            transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+          }}
+        />
+        {/* Hover overlay */}
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ${isHovered ? 'opacity-50' : 'opacity-0'}`}
+        />
+        {/* Logo */}
+        <div className="absolute top-2 right-2">{logo}</div>
+        {/* Button on hover */}
+        {isHovered && (
+          <a href={`${hrefPrefix}${item.id}`} className="absolute inset-0 flex items-center justify-center">
+            <button className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-white/90 transition-colors text-sm md:text-base">
+              {buttonText}
+            </button>
+          </a>
+        )}
+      </div>
+      <div className="mt-2">
+        <h3 className={`text-white font-medium ${size === 'small' ? 'text-sm truncate' : ''}`}>{item.title}</h3>
+        <p className={`text-gray-400 ${size === 'small' ? 'text-xs truncate' : 'text-sm'}`}>{item.category || item.genre}</p>
+        {extraInfo && <div className="text-xs text-gray-400 mt-1">{extraInfo}</div>}
+      </div>
+    </div>
+  )
+}
+
+function ReusableCarousel({ title, items, logo, buttonText, hrefPrefix, size = 'large', bg = 'bg-black', itemWidth, extraInfoKey }) {
+  const carouselRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    let animationFrameId
+    let lastTimestamp = 0
+    const normalSpeed = 2.5 // Faster speed when not hovered (pixels per frame)
+    const slowSpeed = 0.5 // Slower speed when hovered
+
+    const scrollCarousel = (timestamp) => {
+      if (!lastTimestamp) lastTimestamp = timestamp
+      const deltaTime = timestamp - lastTimestamp
+      const scrollSpeed = isHovered ? slowSpeed : normalSpeed
+      const pixelsToScroll = (scrollSpeed * deltaTime) / 16 // Normalize to 60fps
+      if (carouselRef.current) {
+        const currentScroll = carouselRef.current.scrollLeft
+        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
+        let newPosition = currentScroll + pixelsToScroll
+        if (newPosition >= maxScroll) {
+          if (newPosition >= maxScroll * 0.9) {
+            const progress = (newPosition - maxScroll * 0.9) / (maxScroll * 0.1)
+            newPosition = (1 - progress) * newPosition + progress * 0
+          }
+          if (newPosition >= maxScroll) {
+            newPosition = 0
+          }
+        }
+        carouselRef.current.scrollLeft = newPosition
+      }
+      lastTimestamp = timestamp
+      animationFrameId = requestAnimationFrame(scrollCarousel)
+    }
+    animationFrameId = requestAnimationFrame(scrollCarousel)
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId)
+      }
+    }
+  }, [isHovered])
+
+  return (
+    <div
+      className={`relative py-8 ${bg}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-2xl font-semibold text-white mb-6">{title}</h2>
+        <div className="relative">
+          <div
+            ref={carouselRef}
+            className="flex overflow-x-auto gap-4 pb-6 scrollbar-hide"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              scrollBehavior: 'auto',
+            }}
+          >
+            {[...items, ...items].map((item, index) => (
+              <ReusableCard
+                key={`${item.id}-${index}`}
+                item={item}
+                logo={logo}
+                buttonText={buttonText}
+                hrefPrefix={hrefPrefix}
+                size={size}
+                extraInfo={extraInfoKey ? item[extraInfoKey] : undefined}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(true)
 
@@ -91,203 +249,6 @@ export function VideoPlayer() {
   )
 }
 
-export function ShowsCarousel() {
-  const carouselRef = useRef(null)
-  const [isHovered, setIsHovered] = useState(false)
-  const [scrollPosition, setScrollPosition] = useState(0)
-
-  const shows = [
-    {
-      id: 1,
-      title: "Untitled Show",
-      genre: "Drama",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 2,
-      title: "Onside: Major League Soccer",
-      genre: "Documentary",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yPWeIAssARuZ1zre616fZkJht218rQ.png",
-    },
-    {
-      id: 3,
-      title: "Long Way Home",
-      genre: "Documentary",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 4,
-      title: "Carême",
-      genre: "Drama",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 5,
-      title: "Severance",
-      genre: "Sci-Fi",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 6,
-      title: "Ted Lasso",
-      genre: "Comedy",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 7,
-      title: "The Morning Show",
-      genre: "Drama",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 8,
-      title: "Foundation",
-      genre: "Sci-Fi",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-  ]
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    let animationFrameId
-    let lastTimestamp = 0
-    const normalSpeed = 2.5 // Faster speed when not hovered (pixels per frame)
-    const slowSpeed = 0.5 // Slower speed when hovered
-
-    const scrollCarousel = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp
-      const deltaTime = timestamp - lastTimestamp
-
-      // Ensure smooth animation by considering time between frames
-      const scrollSpeed = isHovered ? slowSpeed : normalSpeed
-      const pixelsToScroll = (scrollSpeed * deltaTime) / 16 // Normalize to 60fps
-
-      if (carouselRef.current) {
-        // Get current scroll position
-        const currentScroll = carouselRef.current.scrollLeft
-        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
-
-        // Calculate new position
-        let newPosition = currentScroll + pixelsToScroll
-
-        // If we've reached the end, loop back to start with a smooth transition
-        if (newPosition >= maxScroll) {
-          // When we reach 90% of the way through, start fading in a duplicate at the beginning
-          if (newPosition >= maxScroll * 0.9) {
-            // Gradually transition back to the start
-            const progress = (newPosition - maxScroll * 0.9) / (maxScroll * 0.1)
-            newPosition = (1 - progress) * newPosition + progress * 0
-          }
-
-          // If completely at the end, reset to beginning
-          if (newPosition >= maxScroll) {
-            newPosition = 0
-          }
-        }
-
-        // Apply the scroll
-        carouselRef.current.scrollLeft = newPosition
-      }
-
-      lastTimestamp = timestamp
-      animationFrameId = requestAnimationFrame(scrollCarousel)
-    }
-
-    // Start the animation
-    animationFrameId = requestAnimationFrame(scrollCarousel)
-
-    // Clean up
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId)
-      }
-    }
-  }, [isHovered])
-
-  return (
-    <div
-      className="relative py-8 bg-black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold text-white mb-6">Apple Originals</h2>
-
-        <div className="relative">
-          <div
-            ref={carouselRef}
-            className="flex overflow-x-auto gap-4 pb-6 scrollbar-hide"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              scrollBehavior: "auto", // Changed from 'smooth' to 'auto' for more precise control
-            }}
-          >
-            {// Duplicate the shows array to create a seamless loop effect
-            [...shows, ...shows].map((show, index) => (
-              <ShowCard key={`${show.id}-${index}`} show={show} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ShowCard({ show }) {
-  const [isHovered, setIsHovered] = useState(false)
-
-  return (
-    <div
-      className="relative flex-shrink-0 w-[280px] snap-start"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative overflow-hidden rounded-lg aspect-[3/2]">
-        <div
-          className="w-full h-full bg-cover bg-center transition-transform duration-300"
-          style={{
-            backgroundImage: `url(${show.image})`,
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
-          }}
-        />
-
-        {/* Hover overlay */}
-        <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-            isHovered ? "opacity-50" : "opacity-0"
-          }`}
-        />
-
-        {/* Apple TV+ logo */}
-        <div className="absolute top-2 right-2">
-          <svg className="w-12 h-6" viewBox="0 0 38 16" fill="white">
-            <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
-            <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
-            <path d="M19.89,2.55H17.8V13.45h2.09Z" />
-            <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
-            <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
-          </svg>
-        </div>
-
-        {/* Watch button on hover */}
-        {isHovered && (
-          <a href={`/show/${show.id}`} className="absolute inset-0 flex items-center justify-center">
-            <button className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-white/90 transition-colors">
-              Watch Now
-            </button>
-          </a>
-        )}
-      </div>
-
-      <div className="mt-2">
-        <h3 className="text-white font-medium">{show.title}</h3>
-        <p className="text-gray-400 text-sm">{show.genre}</p>
-      </div>
-    </div>
-  )
-}
-
 export function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(true)
 
@@ -352,208 +313,6 @@ export function MusicPlayer() {
   )
 }
 
-export function MusicCarousel() {
-  const carouselRef = useRef(null)
-  const [isHovered, setIsHovered] = useState(false)
-
-  const playlists = [
-    {
-      id: 1,
-      title: "Alpha",
-      category: "Apple Music",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 2,
-      title: "Today's Country",
-      category: "Apple Music Country",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 3,
-      title: "New Music Daily",
-      category: "Apple Music",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 4,
-      title: "Seth Rogen: The Zane Lowe Interview",
-      category: "The Studio star gets real about his...",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 5,
-      title: "Today's Hits",
-      category: "Apple Music Hits",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 6,
-      title: "A-List Pop",
-      category: "Apple Music Pop",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 7,
-      title: "Rap Life",
-      category: "Apple Music Hip-Hop",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 8,
-      title: "Chill Mix",
-      category: "Apple Music For You",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-      id: 9,
-      title: "Essentials",
-      category: "Apple Music Essentials",
-      image: "/placeholder.svg?height=200&width=200",
-    },
-  ]
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    let animationFrameId
-    let lastTimestamp = 0
-    const normalSpeed = 2 // Faster speed when not hovered (pixels per frame)
-    const slowSpeed = 0.4 // Slower speed when hovered
-
-    const scrollCarousel = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp
-      const deltaTime = timestamp - lastTimestamp
-
-      // Ensure smooth animation by considering time between frames
-      const scrollSpeed = isHovered ? slowSpeed : normalSpeed
-      const pixelsToScroll = (scrollSpeed * deltaTime) / 16 // Normalize to 60fps
-
-      if (carouselRef.current) {
-        // Get current scroll position
-        const currentScroll = carouselRef.current.scrollLeft
-        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
-
-        // Calculate new position
-        let newPosition = currentScroll + pixelsToScroll
-
-        // If we've reached the end, loop back to start with a smooth transition
-        if (newPosition >= maxScroll) {
-          // When we reach 90% of the way through, start fading in a duplicate at the beginning
-          if (newPosition >= maxScroll * 0.9) {
-            // Gradually transition back to the start
-            const progress = (newPosition - maxScroll * 0.9) / (maxScroll * 0.1)
-            newPosition = (1 - progress) * newPosition + progress * 0
-          }
-
-          // If completely at the end, reset to beginning
-          if (newPosition >= maxScroll) {
-            newPosition = 0
-          }
-        }
-
-        // Apply the scroll
-        carouselRef.current.scrollLeft = newPosition
-      }
-
-      lastTimestamp = timestamp
-      animationFrameId = requestAnimationFrame(scrollCarousel)
-    }
-
-    // Start the animation
-    animationFrameId = requestAnimationFrame(scrollCarousel)
-
-    // Clean up
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId)
-      }
-    }
-  }, [isHovered])
-
-  return (
-    <div
-      className="relative py-8 bg-black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold text-white mb-6">Featured Playlists</h2>
-
-        <div className="relative">
-          <div
-            ref={carouselRef}
-            className="flex overflow-x-auto gap-4 pb-6 scrollbar-hide"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              scrollBehavior: "auto",
-            }}
-          >
-            {// Duplicate the playlists array to create a seamless loop effect
-            [...playlists, ...playlists].map((playlist, index) => (
-              <MusicCard key={`${playlist.id}-${index}`} playlist={playlist} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function MusicCard({ playlist }) {
-  const [isHovered, setIsHovered] = useState(false)
-
-  return (
-    <div
-      className="relative flex-shrink-0 w-[180px] snap-start"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative overflow-hidden rounded-lg aspect-square">
-        <div
-          className="w-full h-full bg-cover bg-center transition-transform duration-300"
-          style={{
-            backgroundImage: `url(${playlist.image})`,
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
-          }}
-        />
-
-        {/* Hover overlay */}
-        <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-            isHovered ? "opacity-50" : "opacity-0"
-          }`}
-        />
-
-        {/* Apple Music logo */}
-        <div className="absolute top-2 right-2">
-          <svg className="w-10 h-5" viewBox="0 0 38 16" fill="white">
-            <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
-            <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
-            <path d="M19.89,2.55H17.8V13.45h2.09Z" />
-            <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
-            <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
-          </svg>
-        </div>
-
-        {/* Watch button on hover */}
-        {isHovered && (
-          <a href={`/playlist/${playlist.id}`} className="absolute inset-0 flex items-center justify-center">
-            <button className="bg-white text-black font-medium px-5 py-1.5 rounded-full hover:bg-white/90 transition-colors text-sm">
-              Listen Now
-            </button>
-          </a>
-        )}
-      </div>
-
-      <div className="mt-2">
-        <h3 className="text-white font-medium text-sm truncate">{playlist.title}</h3>
-        <p className="text-gray-400 text-xs truncate">{playlist.category}</p>
-      </div>
-    </div>
-  )
-}
-
 export function ArcadePlayer() {
   const [isPlaying, setIsPlaying] = useState(true)
 
@@ -613,202 +372,6 @@ export function ArcadePlayer() {
         >
           {isPlaying ? <Pause className="w-5 h-5 text-white" /> : <Play className="w-5 h-5 text-white" />}
         </button>
-      </div>
-    </div>
-  )
-}
-
-export function ArcadeCarousel() {
-  const carouselRef = useRef(null)
-  const [isHovered, setIsHovered] = useState(false)
-
-  const games = [
-    {
-      id: 1,
-      title: "Retro Bowl",
-      category: "Sports",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 2,
-      title: "Football Manager 2024 Touch",
-      category: "Sports",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 3,
-      title: "WHAT THE CLASH?",
-      category: "Action",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 4,
-      title: "Bloons TD 6+",
-      category: "Strategy",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 5,
-      title: "NBA 2K24 Arcade Edition",
-      category: "Sports",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 6,
-      title: "Sonic Dream Team",
-      category: "Action",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 7,
-      title: "Asphalt 8: Airborne+",
-      category: "Racing",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      id: 8,
-      title: "Crossy Road Castle",
-      category: "Adventure",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-  ]
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    let animationFrameId
-    let lastTimestamp = 0
-    const normalSpeed = 2.5 // Faster speed when not hovered (pixels per frame)
-    const slowSpeed = 0.5 // Slower speed when hovered
-
-    const scrollCarousel = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp
-      const deltaTime = timestamp - lastTimestamp
-
-      // Ensure smooth animation by considering time between frames
-      const scrollSpeed = isHovered ? slowSpeed : normalSpeed
-      const pixelsToScroll = (scrollSpeed * deltaTime) / 16 // Normalize to 60fps
-
-      if (carouselRef.current) {
-        // Get current scroll position
-        const currentScroll = carouselRef.current.scrollLeft
-        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
-
-        // Calculate new position
-        let newPosition = currentScroll + pixelsToScroll
-
-        // If we've reached the end, loop back to start with a smooth transition
-        if (newPosition >= maxScroll) {
-          // When we reach 90% of the way through, start fading in a duplicate at the beginning
-          if (newPosition >= maxScroll * 0.9) {
-            // Gradually transition back to the start
-            const progress = (newPosition - maxScroll * 0.9) / (maxScroll * 0.1)
-            newPosition = (1 - progress) * newPosition + progress * 0
-          }
-
-          // If completely at the end, reset to beginning
-          if (newPosition >= maxScroll) {
-            newPosition = 0
-          }
-        }
-
-        // Apply the scroll
-        carouselRef.current.scrollLeft = newPosition
-      }
-
-      lastTimestamp = timestamp
-      animationFrameId = requestAnimationFrame(scrollCarousel)
-    }
-
-    // Start the animation
-    animationFrameId = requestAnimationFrame(scrollCarousel)
-
-    // Clean up
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId)
-      }
-    }
-  }, [isHovered])
-
-  return (
-    <div
-      className="relative py-8 bg-black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold text-white mb-6">Featured Games</h2>
-
-        <div className="relative">
-          <div
-            ref={carouselRef}
-            className="flex overflow-x-auto gap-4 pb-6 scrollbar-hide"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              scrollBehavior: "auto",
-            }}
-          >
-            {// Duplicate the games array to create a seamless loop effect
-            [...games, ...games].map((game, index) => (
-              <GameCard key={`${game.id}-${index}`} game={game} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function GameCard({ game }) {
-  const [isHovered, setIsHovered] = useState(false)
-
-  return (
-    <div
-      className="relative flex-shrink-0 w-[280px] snap-start"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative overflow-hidden rounded-lg aspect-[3/2]">
-        <div
-          className="w-full h-full bg-cover bg-center transition-transform duration-300"
-          style={{
-            backgroundImage: `url(${game.image})`,
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
-          }}
-        />
-
-        {/* Hover overlay */}
-        <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-            isHovered ? "opacity-50" : "opacity-0"
-          }`}
-        />
-
-        {/* Apple Arcade logo */}
-        <div className="absolute top-2 right-2">
-          <svg className="w-12 h-6" viewBox="0 0 38 16" fill="white">
-            <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
-            <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
-            <path d="M19.89,2.55H17.8V13.45h2.09Z" />
-            <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
-            <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
-          </svg>
-        </div>
-
-        {/* Watch button on hover */}
-        {isHovered && (
-          <a href={`/game/${game.id}`} className="absolute inset-0 flex items-center justify-center">
-            <button className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-white/90 transition-colors">
-              Play Now
-            </button>
-          </a>
-        )}
-      </div>
-
-      <div className="mt-2">
-        <h3 className="text-white font-medium">{game.title}</h3>
-        <p className="text-gray-400 text-sm">{game.category}</p>
       </div>
     </div>
   )
@@ -879,6 +442,223 @@ export function FitnessPlayer() {
   )
 }
 
+export function ShowsCarousel() {
+  const carouselRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  const shows = [
+    {
+      id: 1,
+      title: "Untitled Show",
+      genre: "Drama",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 2,
+      title: "Onside: Major League Soccer",
+      genre: "Documentary",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yPWeIAssARuZ1zre616fZkJht218rQ.png",
+    },
+    {
+      id: 3,
+      title: "Long Way Home",
+      genre: "Documentary",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 4,
+      title: "Carême",
+      genre: "Drama",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 5,
+      title: "Severance",
+      genre: "Sci-Fi",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 6,
+      title: "Ted Lasso",
+      genre: "Comedy",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 7,
+      title: "The Morning Show",
+      genre: "Drama",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 8,
+      title: "Foundation",
+      genre: "Sci-Fi",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+  ]
+
+  return (
+    <ReusableCarousel
+      title="Apple Originals"
+      items={shows}
+      logo={AppleTVLogo}
+      buttonText="Watch Now"
+      hrefPrefix="/show/"
+      size="large"
+      bg="bg-black"
+      itemWidth="w-[280px]"
+      extraInfoKey="genre"
+    />
+  )
+}
+
+export function MusicCarousel() {
+  const carouselRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const playlists = [
+    {
+      id: 1,
+      title: "Alpha",
+      category: "Apple Music",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 2,
+      title: "Today's Country",
+      category: "Apple Music Country",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 3,
+      title: "New Music Daily",
+      category: "Apple Music",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 4,
+      title: "Seth Rogen: The Zane Lowe Interview",
+      category: "The Studio star gets real about his...",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 5,
+      title: "Today's Hits",
+      category: "Apple Music Hits",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 6,
+      title: "A-List Pop",
+      category: "Apple Music Pop",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 7,
+      title: "Rap Life",
+      category: "Apple Music Hip-Hop",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 8,
+      title: "Chill Mix",
+      category: "Apple Music For You",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: 9,
+      title: "Essentials",
+      category: "Apple Music Essentials",
+      image: "/placeholder.svg?height=200&width=200",
+    },
+  ]
+
+  return (
+    <ReusableCarousel
+      title="Featured Playlists"
+      items={playlists}
+      logo={AppleMusicLogo}
+      buttonText="Listen Now"
+      hrefPrefix="/playlist/"
+      size="large"
+      bg="bg-black"
+      itemWidth="w-[280px]"
+      extraInfoKey="category"
+    />
+  )
+}
+
+export function ArcadeCarousel() {
+  const carouselRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const games = [
+    {
+      id: 1,
+      title: "Retro Bowl",
+      category: "Sports",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 2,
+      title: "Football Manager 2024 Touch",
+      category: "Sports",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 3,
+      title: "WHAT THE CLASH?",
+      category: "Action",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 4,
+      title: "Bloons TD 6+",
+      category: "Strategy",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 5,
+      title: "NBA 2K24 Arcade Edition",
+      category: "Sports",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 6,
+      title: "Sonic Dream Team",
+      category: "Action",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 7,
+      title: "Asphalt 8: Airborne+",
+      category: "Racing",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: 8,
+      title: "Crossy Road Castle",
+      category: "Adventure",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+  ]
+
+  return (
+    <ReusableCarousel
+      title="Featured Games"
+      items={games}
+      logo={AppleArcadeLogo}
+      buttonText="Play Now"
+      hrefPrefix="/game/"
+      size="large"
+      bg="bg-black"
+      itemWidth="w-[280px]"
+      extraInfoKey="category"
+    />
+  )
+}
+
 export function FitnessCarousel() {
   const carouselRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
@@ -934,143 +714,17 @@ export function FitnessCarousel() {
     },
   ]
 
-  // Auto-scroll functionality
-  useEffect(() => {
-    let animationFrameId
-    let lastTimestamp = 0
-    const normalSpeed = 2.5 // Faster speed when not hovered (pixels per frame)
-    const slowSpeed = 0.5 // Slower speed when hovered
-
-    const scrollCarousel = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp
-      const deltaTime = timestamp - lastTimestamp
-
-      // Ensure smooth animation by considering time between frames
-      const scrollSpeed = isHovered ? slowSpeed : normalSpeed
-      const pixelsToScroll = (scrollSpeed * deltaTime) / 16 // Normalize to 60fps
-
-      if (carouselRef.current) {
-        // Get current scroll position
-        const currentScroll = carouselRef.current.scrollLeft
-        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
-
-        // Calculate new position
-        let newPosition = currentScroll + pixelsToScroll
-
-        // If we've reached the end, loop back to start with a smooth transition
-        if (newPosition >= maxScroll) {
-          // When we reach 90% of the way through, start fading in a duplicate at the beginning
-          if (newPosition >= maxScroll * 0.9) {
-            // Gradually transition back to the start
-            const progress = (newPosition - maxScroll * 0.9) / (maxScroll * 0.1)
-            newPosition = (1 - progress) * newPosition + progress * 0
-          }
-
-          // If completely at the end, reset to beginning
-          if (newPosition >= maxScroll) {
-            newPosition = 0
-          }
-        }
-
-        // Apply the scroll
-        carouselRef.current.scrollLeft = newPosition
-      }
-
-      lastTimestamp = timestamp
-      animationFrameId = requestAnimationFrame(scrollCarousel)
-    }
-
-    // Start the animation
-    animationFrameId = requestAnimationFrame(scrollCarousel)
-
-    // Clean up
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId)
-      }
-    }
-  }, [isHovered])
-
   return (
-    <div
-      className="relative py-8 bg-black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold text-white mb-6">Featured Workouts</h2>
-
-        <div className="relative">
-          <div
-            ref={carouselRef}
-            className="flex overflow-x-auto gap-4 pb-6 scrollbar-hide"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              scrollBehavior: "auto",
-            }}
-          >
-            {// Duplicate the workouts array to create a seamless loop effect
-            [...workouts, ...workouts].map((workout, index) => (
-              <WorkoutCard key={`${workout.id}-${index}`} workout={workout} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function WorkoutCard({ workout }) {
-  const [isHovered, setIsHovered] = useState(false)
-
-  return (
-    <div
-      className="relative flex-shrink-0 w-[280px] snap-start"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative overflow-hidden rounded-lg aspect-[3/2]">
-        <div
-          className="w-full h-full bg-cover bg-center transition-transform duration-300"
-          style={{
-            backgroundImage: `url(${workout.image})`,
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
-          }}
-        />
-
-        {/* Hover overlay */}
-        <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-            isHovered ? "opacity-50" : "opacity-0"
-          }`}
-        />
-
-        {/* Apple Fitness+ logo */}
-        <div className="absolute top-2 right-2">
-          <svg className="w-12 h-6" viewBox="0 0 38 16" fill="white">
-            <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6,6,0,0,1,8,14Z" />
-            <path d="M11.43,7.25,7.18,4.6A.75.75,0,0,0,6,5.23v5.3a.75.75,0,0,0,1.12.63l4.25-2.65a.75.75,0,0,0,0-1.26Z" />
-            <path d="M19.89,2.55H17.8V13.45h2.09Z" />
-            <path d="M28.08,5.45h-2.7l-2,5.76-2-5.76h-2.7l3.28,8h2.82Z" />
-            <path d="M28.91,5.45v8h5.18v-2H31v-6Z" />
-          </svg>
-        </div>
-
-        {/* Watch button on hover */}
-        {isHovered && (
-          <a href={`/workout/${workout.id}`} className="absolute inset-0 flex items-center justify-center">
-            <button className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-white/90 transition-colors">
-              Watch Now
-            </button>
-          </a>
-        )}
-      </div>
-
-      <div className="mt-2">
-        <h3 className="text-white font-medium">{workout.title}</h3>
-        <p className="text-gray-400 text-sm">{workout.category}</p>
-      </div>
-    </div>
+    <ReusableCarousel
+      title="Featured Workouts"
+      items={workouts}
+      logo={AppleFitnessLogo}
+      buttonText="Watch Now"
+      hrefPrefix="/workout/"
+      size="large"
+      bg="bg-black"
+      itemWidth="w-[280px]"
+      extraInfoKey="category"
+    />
   )
 }

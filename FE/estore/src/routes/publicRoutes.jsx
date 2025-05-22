@@ -4,6 +4,7 @@ import Stores from '../pages/Stores';
 import Mac from '../pages/Mac';
 import Services from '../pages/Services/ServicesPage';
 import Ipad from '../pages/Ipad';
+import Support from '../pages/Support/SupportPage';
 
 const publicRoutes = [
   {
@@ -25,6 +26,10 @@ const publicRoutes = [
   {
     path: '/services',
     element: <Services />,
+  },
+  {
+    path: '/support',
+    element: <Support />,
   },
 ];
 
