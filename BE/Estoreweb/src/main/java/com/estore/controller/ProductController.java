@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -103,11 +104,13 @@ public class ProductController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('MANAGE_PRODUCTS')")
     public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody ProductDTO productDTO) {
         return new ResponseEntity<>(productService.createProduct(productDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('MANAGE_PRODUCTS')")
     public ResponseEntity<ProductDTO> updateProduct(
             @PathVariable Long id, 
             @Valid @RequestBody ProductDTO productDTO) {
@@ -116,12 +119,14 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('MANAGE_PRODUCTS')")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
 
     @PostMapping(value = "/{productId}/images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("hasAuthority('MANAGE_PRODUCTS')")
     public ResponseEntity<ProductImageDTO> addProductImage(
             @PathVariable Long productId,
             @RequestParam("image") MultipartFile file) {
@@ -130,6 +135,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}/images/{imageId}")
+    @PreAuthorize("hasAuthority('MANAGE_PRODUCTS')")
     public ResponseEntity<Void> deleteProductImage(
             @PathVariable Long productId, 
             @PathVariable Long imageId) {
@@ -139,6 +145,7 @@ public class ProductController {
     }
 
     @PutMapping("/{productId}/images/{imageId}/primary")
+    @PreAuthorize("hasAuthority('MANAGE_PRODUCTS')")
     public ResponseEntity<Void> setPrimaryImage(
             @PathVariable Long productId, 
             @PathVariable Long imageId) {
@@ -148,6 +155,7 @@ public class ProductController {
     }
 
     @PutMapping("/{productId}/stock")
+    @PreAuthorize("hasAnyAuthority('MANAGE_PRODUCTS', 'MANAGE_INVENTORY')")
     public ResponseEntity<Boolean> updateStock(
             @PathVariable Long productId,
             @RequestParam Integer quantity) {

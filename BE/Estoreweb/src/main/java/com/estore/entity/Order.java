@@ -6,14 +6,15 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @Entity
 @Table(name = "orders")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID orderId;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -73,7 +74,4 @@ public class Order {
         return true;
     }
 
-    public List<OrderItem> getItems() {
-        return items;
-    }
-} 
+}

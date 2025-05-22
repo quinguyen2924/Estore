@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c91b165-9785-43f1-9773-ef2590ce2630" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/config/RoleInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/config/RoleInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/controller/ReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/dto/AdminDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/dto/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/dto/RegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/dto/RegisterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/dto/ReportDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/entity/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/entity/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/enums/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/enums/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/enums/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/enums/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/repository/AdminRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/repository/ReportRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/security/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/service/ReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/service/impl/AdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/java/com/estore/service/impl/ReportServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/Estoreweb/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BE/Estoreweb/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2xfQH64dbTztV5duDNpq7fX989B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/Estore",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c91b165-9785-43f1-9773-ef2590ce2630" name="Changes" comment="" />
+      <created>1748326556674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748326556674</updated>
+      <workItem from="1748326557858" duration="54000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -63,18 +63,6 @@ public class Product {
         updatedAt = LocalDateTime.now();
     }
 
-    public List<ProductImage> getImages() {
-        return images;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public List<Promotion> getPromotions() {
-        return promotions;
-    }
-
     public boolean updateStock(Integer quantity) {
         if (quantity < 0 && Math.abs(quantity) > stockQuantity) {
             return false;
