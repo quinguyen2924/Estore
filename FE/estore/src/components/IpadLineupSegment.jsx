@@ -1,9 +1,7 @@
 import React, { useRef } from 'react';
-import { ipadData } from '../data/ProductData';
 
-const IpadLineupSegment = ({ title = "Which iPad is right for you?" }) => {
+const IpadLineupSegment = ({ title, segments }) => {
   const scrollRef = useRef(null);
-  const segments = ipadData.lineupSegments;
 
   const scrollBy = (offset) => {
     if (scrollRef.current) {
@@ -37,7 +35,7 @@ const IpadLineupSegment = ({ title = "Which iPad is right for you?" }) => {
         </svg>
       </button>
 
-      {/* Danh sách iPad - scroll ngang */}
+      {/* Danh sách sản phẩm - scroll ngang */}
       <div
         ref={scrollRef}
         className="flex flex-nowrap gap-12 overflow-x-auto scrollbar-hide px-12"
@@ -55,7 +53,7 @@ const IpadLineupSegment = ({ title = "Which iPad is right for you?" }) => {
               <span className="text-xs text-blue-600 font-semibold mb-2">New</span>
             )}
             <h3 className="text-2xl font-bold text-gray-900 mb-1 text-center">{p.name}</h3>
-            <div className="text-base font-semibold text-gray-700 mb-2 text-center">{p.chip}</div>
+            {p.chip && <div className="text-base font-semibold text-gray-700 mb-2 text-center">{p.chip}</div>}
             <div className="text-gray-600 text-center mb-4">{p.desc}</div>
             <div className="text-gray-900 font-medium text-center mb-6">{p.price}</div>
             <div className="flex gap-4">

@@ -8,7 +8,7 @@ import MacEssentials from '../components/MacEssentials';
 import MacSignificantOthers from '../components/MacSignificantOthers';
 import { ipadData } from '../data/ProductData';
 import IpadLineupSegment from '../components/IpadLineupSegment';
-const iPad = () => {
+const IPad = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -73,7 +73,7 @@ const iPad = () => {
         <ProductFeatureCards cards={ipadData.featureCards} title="Get to know iPad." />
 
         {/* Lineup Segment */}
-        <IpadLineupSegment title="Get to know iPad." />
+        <IpadLineupSegment  segments={ipadData.lineupSegments} title="Explore the lineup." />
 
 
         {/* Significant Others */}
@@ -87,4 +87,4 @@ const iPad = () => {
   );
 };
 
-export default iPad; 
+export default IPad; 
