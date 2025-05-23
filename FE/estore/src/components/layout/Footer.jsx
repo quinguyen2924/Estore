@@ -1,7 +1,25 @@
 import { useState } from 'react';
+import { FaApple } from "react-icons/fa";
+import { useLocation, Link } from "react-router-dom";
 
 function Footer() {
   const [expandedSection, setExpandedSection] = useState(null);
+  const location = useLocation();
+  const pathnames = location.pathname.split('/').filter(x => x);
+
+  const breadcrumbMap = {
+    "mac": "Mac",
+    "ipad": "iPad",
+    "iphone": "iPhone",
+    "watch": "Watch",
+    "vision": "Vision",
+    "airpods": "AirPods",
+    "tv-home": "TV & Home",
+    "airtag": "AirTag",
+    "accessories": "Accessories",
+    "gift-cards": "Gift Cards",
+    // ... thêm các mapping khác nếu cần
+  };
 
   const footerSections = [
     {
@@ -135,8 +153,33 @@ function Footer() {
 
   return (
     <footer className="bg-[#f5f5f7] text-[#6e6e73] text-sm">
-      {/* Main Footer Content */}
       <div className="max-w-5xl mx-auto px-4 py-12">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 mb-6 text-[#6e6e73] text-sm">
+          <FaApple className="text-xl" />
+          
+          {pathnames.length > 0 && (
+            <>
+              {pathnames.map((value, idx) => {
+                const to = `/${pathnames.slice(0, idx + 1).join('/')}`;
+                return (
+                  <span key={to} className="flex items-center">
+                    <span className="mx-2">{'>'}</span>
+                    {idx === pathnames.length - 1 ? (
+                      <span className="text-[#1d1d1f] font-semibold">
+                        {breadcrumbMap[value] || value.charAt(0).toUpperCase() + value.slice(1)}
+                      </span>
+                    ) : (
+                      <Link to={to} className="hover:underline">
+                        {breadcrumbMap[value] || value.charAt(0).toUpperCase() + value.slice(1)}
+                      </Link>
+                    )}
+                  </span>
+                );
+              })}
+            </>
+          )}
+        </div>
         {/* Desktop Footer Navigation */}
         <div className="hidden md:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 text-left">
           {footerSections.map((section, index) => (
