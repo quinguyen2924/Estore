@@ -672,89 +672,89 @@ export const watchData = {
   ],
   lineupSegments: [
     {
-      name: "Apple Watch Ultra 2",
-      chip: "S9 SiP",
-      desc: "The most rugged and capable Apple Watch ever, designed for endurance athletes and adventurers.",
-      price: "From $799 or $66.58/mo. for 12 mo.*",
-      img: "/images/Watch/apple_watch_ultra2.png",
+      name: "Apple Watch SE",
+      chip: "",
+      desc: "All the essentials. Light on price.",
+      price: "From $249 or $20.75/mo. for 12 mo.*",
+      img: "/images/Watch/product_se__c83w8hz9gre6_large.png",
       isNew: true,
     },
     {
-      name: "Apple Watch Series 9",
-      chip: "S9 SiP",
-      desc: "Powerful sensors, advanced health features, and a brighter display.",
+      name: "Apple Watch Series 10",
+      chip: "",
+      desc: "Thinnest. Biggest display.23. Advanced health features.",
       price: "From $399 or $33.25/mo. for 12 mo.*",
-      img: "/images/Watch/apple_watch_series9.png",
+      img: "/images/Watch/product_s10__c724044usymq_large.png",
       isNew: false,
     },
     {
-      name: "Apple Watch SE",
-      chip: "S8 SiP",
-      desc: "Essential features to help you stay connected, active, and healthy.",
-      price: "From $249 or $20.75/mo. for 12 mo.*",
-      img: "/images/Watch/apple_watch_se.png",
+      name: "Apple Watch Ultra 2",
+      chip: "",
+      desc: "The ultimate sports and adventure watch.",
+      price: "From $799 or $66.58/mo. for 12 mo.*",
+      img: "/images/Watch/product_u2__hedpiz396nue_large.png",
       isNew: false,
     },
   ],
   featureCards: [
     {
-      title2: 'Adventure',
-      description2: 'Built for extreme environments and activities.',
-      image: '/images/Watch/fc_adventure.jpg',
+      title2: 'Health',
+      description2: 'Knows you by heart.',
+      image: '/images/Watch/feature_health__b2yo83wkzoaa_medium.jpg',
       link: '/watch/apple-watch-ultra-2'
     },
     {
-      title2: 'Health & Fitness',
-      description2: 'Advanced health metrics and workout tracking.',
-      image: '/images/Watch/fc_health_fitness.jpg',
+      title2: 'Fitness',
+      description2: 'Every move counts.',
+      image: '/images/Watch/feature_fitness__b5owsglf0ieu_medium.jpg',
       link: '/watch/apple-watch-series-9'
     },
     {
       title2: 'Connectivity',
-      description2: 'Stay connected with calls, messages, and more.',
-      image: '/images/Watch/fc_connectivity.jpg',
+      description2: 'The right call for staying in touch.',
+      image: '/images/Watch/feature_connectivity__cwtqydvy2laq_medium.jpg',
       link: '/watch/apple-watch-se'
     },
     {
-      title2: 'Customization',
-      description2: 'A wide range of bands and watch faces to match your style.',
-      image: '/images/Watch/fc_customization.jpg',
+      title2: 'Safety',
+      description2: 'Good help is easy to find.',
+      image: '/images/Watch/feature_safety__gln97xcew2em_medium.jpg',
       link: '/watch/bands'
     },
     {
-      title2: 'Safety',
-      description2: 'Emergency SOS, Fall Detection, and Crash Detection.',
-      image: '/images/Watch/fc_safety.jpg',
+      title2: 'Apple Watch + iPhone',
+      description2: 'Dynamic duo.',
+      image: '/images/Watch/feature_watch_and_iphone__fiq5g9njy5qy_medium.jpg',
       link: '/watch/apple-watch-series-9'
     }
   ],
   significantOthers: [
     {
       title: 'Apple Watch and iPhone',
-      content: 'Seamlessly integrated to keep you connected and informed.',
-      image: '/images/Watch/watch_iphone.jpg'
+      content: 'Combining Apple Watch and iPhone opens up a world of features that make each device better. You can do things like create a custom route with Maps on your iPhone, then download it to your watch to use any time. Or start a cycling workout on your watch and see your metrics automatically appear as a Live Activity on your iPhone.',
+      image: '/images/Watch/accordion_watch_and_iphone__c4of7nzjhc8y_medium.jpg'
+    },
+    {
+      title: 'Apple Watch and Apple Fitness+',
+      content: 'Apple Watch supercharges your Fitness+ experience with real‑time, personalized metrics onscreen, like your heart rate, calories burned, and Activity rings.27 And you get the freedom of audio‑guided walks, runs, and meditations with just your watch and AirPods.',
+      image: '/images/Watch/accordion_watch_and_fitness_plus__cp61gf3qp802_medium.jpg'
     },
     {
       title: 'Apple Watch and AirPods',
-      content: 'Enjoy music, podcasts, and calls directly from your wrist.',
-      image: '/images/Watch/watch_airpods.jpg'
-    },
-    {
-      title: 'Apple Watch and Mac',
-      content: 'Unlock your Mac automatically and use Apple Pay with ease.',
-      image: '/images/Watch/watch_mac.jpg'
+      content: '',
+      image: '/images/Watch/accordion_watch_and_airpods__dhvftndi3lyu_medium.jpg'
     }
   ],
   essentials: [
     {
-      title: 'Apple Watch Bands',
-      content: 'A variety of styles and colors to personalize your watch.',
-      image: '/images/Watch/bands.png'
+      title: 'A splash of color',
+      content: '',
+      image: '/images/Watch/banner_bands__cd5m1690azaq_medium.jpg'
     },
     {
-      title: 'Chargers and Docks',
-      content: 'Keep your Apple Watch powered up and ready.',
-      image: '/images/Watch/chargers.png'
+      title: 'Magic runs in the family',
+      content: '',
+      image: '/images/Watch/banner_airpods__dc2h7dg71l0m_medium.jpg'
     }
   ]
 };

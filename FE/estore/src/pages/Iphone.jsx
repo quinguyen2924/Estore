@@ -34,7 +34,7 @@ const Iphone = () => {
             <h1 className="text-7xl font-bold text-gray-900">iPhone</h1>
           </div>
           <div className="text-2xl font-semibold text-gray-900 text-right flex flex-col justify-center">
-            <span>"</span>
+            <span></span>
             <span>Designed to be loved.</span>
           </div>
         </section>

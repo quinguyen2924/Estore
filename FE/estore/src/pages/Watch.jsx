@@ -34,8 +34,8 @@ const Watch = () => {
             <h1 className="text-7xl font-bold text-gray-900">Apple Watch</h1>
           </div>
           <div className="text-2xl font-semibold text-gray-900 text-right flex flex-col justify-center">
-            <span>"</span>
-            <span>The future of health is on your wrist.</span>
+            <span>The ultimate device</span>
+            <span>for a healthy life.</span>
           </div>
         </section>
 
@@ -44,7 +44,7 @@ const Watch = () => {
           <div className="relative">
             <video
               ref={videoRef}
-              src="/images/Watch/xlarge.mp4"
+              src="/images/Watch/xlarge (1).mp4"
               autoPlay
               loop
               muted
@@ -76,7 +76,7 @@ const Watch = () => {
         <IpadLineupSegment segments={watchData.lineupSegments} title="Explore the Apple Watch lineup." />
 
         {/* Significant Others */}
-        <MacSignificantOthers items={watchData.significantOthers} title="Significant others." />
+        <MacSignificantOthers items={watchData.significantOthers} title="Made for each other." />
 
         {/* Essentials */}
         <MacEssentials items={watchData.essentials} title="Apple Watch essentials." />
