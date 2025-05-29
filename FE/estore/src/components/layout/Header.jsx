@@ -455,8 +455,10 @@ function Header() {
                       <div className="fixed left-0 right-0 top-[44px] w-full bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <div className="container mx-auto">
                           <div className="flex justify-center py-8">
-                            <div className={`grid grid-cols-${dropdownContents[item.name].columns.length} gap-16 w-full max-w-5xl`}>
+                            {/* Changed from grid to flexbox to arrange category columns horizontally */}
+                            <div className="flex flex-row justify-center gap-16 w-full max-w-5xl">
                               {dropdownContents[item.name].columns.map((col, colIdx) => (
+                                // Each 'col' is a vertical column for a category
                                 <div className="flex flex-col items-start min-w-[220px]" key={colIdx}>
                                   <h3 className="text-sm font-medium mb-4 text-gray-600">{col.title}</h3>
                                   <ul className="space-y-3 text-left">
