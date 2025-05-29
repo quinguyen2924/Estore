@@ -85,19 +85,6 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
-    @Override
-    @Transactional(readOnly = true)
-    public boolean login(String email, String password) {
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Invalid email or password"));
-        
-        if (!user.getIsActive()) {
-            throw new RuntimeException("Account is inactive");
-        }
-        
-        return passwordEncoder.matches(password, user.getPassword());
-    }
-
 
     @Override
     @Transactional

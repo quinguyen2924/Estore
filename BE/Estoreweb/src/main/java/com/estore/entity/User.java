@@ -57,11 +57,4 @@ public class User {
         updatedAt = LocalDateTime.now();
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public Cart getCart() {
-        return cart;
-    }
-} 
+}

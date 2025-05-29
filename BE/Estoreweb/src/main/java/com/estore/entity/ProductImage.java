@@ -39,10 +39,6 @@ public class ProductImage {
         this.isPrimary = false;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
     public void updateImageUrl(String newImageUrl) {
         if (newImageUrl != null && !newImageUrl.trim().isEmpty()) {
             this.imageUrl = newImageUrl;

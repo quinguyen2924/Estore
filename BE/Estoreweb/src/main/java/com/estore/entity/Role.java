@@ -44,10 +44,6 @@ public class Role {
         updatedAt = LocalDateTime.now();
     }
 
-    public List<Permission> getPermissions() {
-        return permissions;
-    }
-
     public boolean addPermission(Permission permission) {
         if (!permissions.contains(permission)) {
             permissions.add(permission);

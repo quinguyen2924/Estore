@@ -20,14 +20,22 @@ public class RoleInitializer {
     @PostConstruct
     @Transactional
     public void initRoles() {
-        // Tạo hoặc cập nhật role ADMIN
+        // Tạo hoặc cập nhật role ADMIN - Có tất cả các quyền
         createRoleIfNotExists(
                 UserRole.ADMIN,
                 "Quản trị viên hệ thống",
-                Arrays.asList(Permission.values())
+                List.of(
+                    Permission.MANAGE_USERS,
+                    Permission.MANAGE_PRODUCTS,
+                    Permission.MANAGE_CATEGORIES,
+                    Permission.MANAGE_ORDERS,
+                    Permission.MANAGE_PROMOTIONS,
+                    Permission.MANAGE_INVENTORY,
+                    Permission.MANAGE_REVIEWS
+                )
         );
 
-        // Tạo hoặc cập nhật role MANAGER
+        // Tạo hoặc cập nhật role MANAGER - Quản lý sản phẩm, đơn hàng, khuyến mãi, kho và xem báo cáo
         createRoleIfNotExists(
                 UserRole.MANAGER,
                 "Quản lý",
@@ -35,22 +43,21 @@ public class RoleInitializer {
                         Permission.MANAGE_PRODUCTS,
                         Permission.MANAGE_ORDERS,
                         Permission.MANAGE_PROMOTIONS,
-                        Permission.VIEW_REPORTS,
                         Permission.MANAGE_INVENTORY
                 )
         );
 
-        // Tạo hoặc cập nhật role STAFF
+        // Tạo hoặc cập nhật role STAFF - Quản lý đơn hàng và xem báo cáo
         createRoleIfNotExists(
                 UserRole.STAFF,
                 "Nhân viên",
                 List.of(
                         Permission.MANAGE_ORDERS,
-                        Permission.VIEW_REPORTS
+                        Permission.MANAGE_INVENTORY
                 )
         );
 
-        // Tạo hoặc cập nhật role CUSTOMER
+        // Tạo hoặc cập nhật role CUSTOMER - Không có quyền quản lý
         createRoleIfNotExists(
                 UserRole.CUSTOMER,
                 "Khách hàng",

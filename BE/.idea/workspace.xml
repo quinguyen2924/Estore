@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcb29b47-70f0-4e11-bb18-6158a505d322" name="Changes" comment="" />
+    <list default="true" id="dcb29b47-70f0-4e11-bb18-6158a505d322" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/config/RoleInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/config/RoleInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/controller/ReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/dto/AdminDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/dto/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/dto/RegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/dto/RegisterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/dto/ReportDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/entity/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/entity/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/enums/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/enums/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/enums/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/enums/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/repository/AdminRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/repository/ReportRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/security/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/service/ReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/service/impl/AdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/java/com/estore/service/impl/ReportServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoreweb/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Estoreweb/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,29 +36,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2xB2BH0iQrbeDWstOwXWtOvG0IB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/Estore/BE",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Estore/BE&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -49,6 +76,11 @@
       <option name="presentableId" value="Default" />
       <updated>1747397008957</updated>
       <workItem from="1747397010112" duration="65000" />
+      <workItem from="1747634180899" duration="12000" />
+      <workItem from="1747922515623" duration="33000" />
+      <workItem from="1748326508598" duration="32000" />
+      <workItem from="1748326546148" duration="10000" />
+      <workItem from="1748326615849" duration="11000" />
     </task>
     <servers />
   </component>
