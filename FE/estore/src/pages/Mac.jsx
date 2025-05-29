@@ -74,7 +74,7 @@ const Mac = () => {
 
   return (
     <div className="min-h-screen flex flex-col w-full bg-white">
-      <Header />
+     
       <MacNavBar navItems={macData.navItems} />
       <main className="flex-1">
         {/* Section tiêu đề và slogan */}
@@ -141,7 +141,7 @@ const Mac = () => {
         <MacSignificantOthers items={macData.significantOthers} title="Significant others." />
         <MacEssentials items={macData.essentials} title="Mac essentials." />
       </main>
-      <Footer />
+
     </div>
   );
 };

@@ -7,6 +7,9 @@ import Ipad from '../pages/Ipad';
 import Support from '../pages/Support/SupportPage';
 import Vision from '../pages/Vision/VisionPage';
 import AccessoriesPage from '../pages/Accessories/AccessoriesPage';
+import Iphone from '../pages/Iphone';
+import Watch from '../pages/Watch';
+import AirPods from '../pages/AirPods';
 
 const publicRoutes = [
   {
@@ -41,6 +44,18 @@ const publicRoutes = [
     path: '/support',
     element: <Support />,
   },
+  {
+    path: '/iphone',
+    element: <Iphone />,
+  },
+  {
+    path: '/watch',
+    element: <Watch />,
+  },
+  {
+    path: '/airpods',
+    element: <AirPods />,
+  }
 ];
 
 export default publicRoutes; 

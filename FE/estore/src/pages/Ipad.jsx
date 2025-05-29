@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react';
-import Header from '../components/layout/Header';
+
 import MacNavBar from '../components/MacNavBar';
 import ProductFeatureCards from '../components/MacFeatureCards';
-import Footer from '../components/layout/Footer';
-import MacLineupSegment from '../components/MacLineupSegment';
+
+
 import MacEssentials from '../components/MacEssentials';
 import MacSignificantOthers from '../components/MacSignificantOthers';
 import { ipadData } from '../data/ProductData';
 import IpadLineupSegment from '../components/IpadLineupSegment';
-const iPad = () => {
+const IPad = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -25,7 +25,7 @@ const iPad = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+    
       <MacNavBar navItems={ipadData.navItems} />
       <main>
         {/* Title Section */}
@@ -73,7 +73,7 @@ const iPad = () => {
         <ProductFeatureCards cards={ipadData.featureCards} title="Get to know iPad." />
 
         {/* Lineup Segment */}
-        <IpadLineupSegment title="Get to know iPad." />
+        <IpadLineupSegment  segments={ipadData.lineupSegments} title="Explore the lineup." />
 
 
         {/* Significant Others */}
@@ -82,9 +82,9 @@ const iPad = () => {
         {/* Essentials */}
         <MacEssentials items={ipadData.essentials} title="Ipad essentials." />
       </main>
-      <Footer />
+   
     </div>
   );
 };
 
-export default iPad; 
+export default IPad; 
