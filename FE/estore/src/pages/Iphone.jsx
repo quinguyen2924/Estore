@@ -25,7 +25,7 @@ const Iphone = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      
       <MacNavBar navItems={iphoneData.navItems} />
       <main>
         {/* Title Section */}
@@ -81,7 +81,7 @@ const Iphone = () => {
         {/* Essentials */}
         <MacEssentials items={iphoneData.essentials} title="iPhone essentials." />
       </main>
-      <Footer />
+     
     </div>
   );
 };

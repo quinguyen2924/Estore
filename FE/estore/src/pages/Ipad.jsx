@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
-import Header from '../components/layout/Header';
+
 import MacNavBar from '../components/MacNavBar';
 import ProductFeatureCards from '../components/MacFeatureCards';
-import Footer from '../components/layout/Footer';
-import MacLineupSegment from '../components/MacLineupSegment';
+
+
 import MacEssentials from '../components/MacEssentials';
 import MacSignificantOthers from '../components/MacSignificantOthers';
 import { ipadData } from '../data/ProductData';
@@ -25,7 +25,7 @@ const IPad = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+    
       <MacNavBar navItems={ipadData.navItems} />
       <main>
         {/* Title Section */}
@@ -82,7 +82,7 @@ const IPad = () => {
         {/* Essentials */}
         <MacEssentials items={ipadData.essentials} title="Ipad essentials." />
       </main>
-      <Footer />
+   
     </div>
   );
 };

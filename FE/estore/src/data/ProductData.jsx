@@ -97,44 +97,67 @@ export const macData = {
     {
       title: 'Apple Intelligence and macOS',
       description: 'Easy to use. Easy to love.',
-      image: '/images/Mac/mac_intelligence_siri__do2ke43yic02_xlarge.jpg',
-      link: '/mac/macbook-air'
+      content1: 'The apps you love. Right on your Mac. From Microsoft 365 to Adobe Creative Cloud to Zoom, all your go-to apps are superfast and snappy on Mac.',
+      image1: '/images/Mac/mac_intelligence_siri__do2ke43yic02_xlarge.jpg',
+      content2: 'Well connected. Mac comes with all the ports you need to use your favorite accessories, like external displays, hard drives, cameras, and printers.',
+      image2: '/images/Mac/mac_intelligence_siri__do2ke43yic02_xlarge2.jpg',
+      content3: 'Mac is compatible with your favorite accessories.',
+      image3: '/images/Mac/mac_intelligence_siri__do2ke43yic02_xlarge3.jpg',
+      link: '/mac/macbook-air',
     },
     {
-      title2: 'Performance and Battery Life',
-      description2: 'Go fast. Go far.',
-      image: '/images/Mac/mac_performance__dh5hyac1zf8m_xlarge.jpg',
-      link: '/mac/macbook-pro'
+      title: 'Performance and Battery Life',
+      description: 'Go fast. Go far.',
+      content1: 'Mac delivers incredible performance and battery life for all your tasks.',
+      image1: '/images/Mac/mac_performance__dh5hyac1zf8m_xlarge.jpg',
+      content2: "Work and play longer with Mac's amazing battery.",
+      image2: '/images/Mac/mac_performance__dh5hyac1zf8m_xlarge2.jpg',
+      link: '/mac/macbook-pro',
     },
     {
       title: 'Mac and iPhone',
       description: 'Dream team.',
-      image: '/images/Mac/mac_iphone__gh1tblkt6bqm_xlarge.jpg',
-      link: '/mac/macbook-pro'
+      content1: '',
+      image1: '/images/Mac/mac_iphone__gh1tblkt6bqm_xlarge.jpg',
+      content2: '',
+      image2: '',
+      link: '/mac/macbook-pro',
     },
     {
       title: 'Compatibility',
       description: 'Mac runs your favorite apps..',
-      image: '/images/Mac/mac_compatibility__cu59oukz81ci_xlarge.jpg',
-      link: '/mac/macbook-pro'
+      content1: '',
+      image1: '/images/Mac/mac_compatibility__cu59oukz81ci_xlarge.jpg',
+      content2: '',
+      image2: '',
+      link: '/mac/macbook-pro',
     },
     {
       title: 'Privacy and Security',
-      description: 'Your business is nobody else’s..',
-      image: '/images/Mac/mac_security__gfwda10khdym_xlarge.jpg',
-      link: '/mac/macbook-pro'
+      description: 'Your business is nobody else\'s..',
+      content1: '',
+      image1: '/images/Mac/mac_security__gfwda10khdym_xlarge.jpg',
+      content2: '',
+      image2: '',
+      link: '/mac/macbook-pro',
     },
     {
       title: 'Durability',
       description: 'Built to stand the test of time.',
-      image: '/images/Mac/mac_durability__epiwcuk7zkeq_xlarge.jpg',
-      link: '/mac/macbook-pro'
+      content1: '',
+      image1: '/images/Mac/mac_durability__epiwcuk7zkeq_xlarge.jpg',
+      content2: '',
+      image2: '',
+      link: '/mac/macbook-pro',
     },
     {
       title: 'Apple Values',
       description: 'Our values drive everything we do.',
-      image: '/images/Mac/mac_values__c9gck9qi4kia_xlarge.jpg',
-      link: '/mac/macbook-pro'
+      content1: '',
+      image1: '/images/Mac/mac_values__c9gck9qi4kia_xlarge.jpg',
+      content2: '',
+      image2: '',
+      link: '/mac/macbook-pro',
     },
     // Add more feature cards as needed
   ],
@@ -228,7 +251,7 @@ export const macData = {
   significantOthers: [
     {
       title: 'Mac and IPhone',
-      content: `Answer calls or messages from your iPhone directly on your Mac. See and control what’s on your iPhone from your Mac with iPhone Mirroring. Use Universal Clipboard to copy images, video, or text from your iPhone, then paste into another app on your nearby Mac. And thanks to iCloud, you can access your files from either your iPhone or your Mac. And so much more.`,
+      content: `Answer calls or messages from your iPhone directly on your Mac. See and control what's on your iPhone from your Mac with iPhone Mirroring. Use Universal Clipboard to copy images, video, or text from your iPhone, then paste into another app on your nearby Mac. And thanks to iCloud, you can access your files from either your iPhone or your Mac. And so much more.`,
       image: '/images/Mac/world_mac_iphone__mr1xfuchl56e_medium.jpg',
     },
     {
@@ -239,7 +262,7 @@ export const macData = {
     },
     {
       title: 'Mac and Apple Watch',
-      content: 'Automatically log in to your Mac when you’re wearing your Apple Watch with Auto Unlock. No password typing required.',
+      content: "Automatically log in to your Mac when you're wearing your Apple Watch with Auto Unlock. No password typing required.",
       image: '/images/Mac/world_mac_watch__dckn1orrpkqe_medium.jpg',
       link: '/apple-music'
     },
@@ -380,32 +403,32 @@ export const ipadData = {
       title2: 'Apple Intelligence',
       description2: 'Personal, private, powerful.',
       image: '/images/Ipad/fc_apple_intelligence_9c3df7e24.jpg',
-      link: '/ipad/ipad-pro'
+      link: '/ipad/ipad-pro',
     },
     {
       title2: 'Productivity',
       description2: 'Your workplace can be any place.',
       image: '/images/Ipad/fc_productivity_1bc824ba6.jpg',
-      link: '/ipad/ipad-air'
+      link: '/ipad/ipad-air',
     },
     {
       title2: 'Creativity',
       description2: 'Take your inner artist out and about..',
       image: '/images/Ipad/fc_creativity_4a558f6f4.jpg',
-      link: '/ipad/ipad'
+      link: '/ipad/ipad',
     },
     {
       title2: 'Learning',
       description2: 'Your classroom can be anywhere.',
       image: '/images/Ipad/fc_learning_bc8125962.jpg',
-      link: '/ipad/ipad-mini'
+      link: '/ipad/ipad-mini',
     },
     {
       title2: 'Entertainment',
       description2: 'Kick back. Tune in. Game on.',
       image: '/images/Ipad/fc_entertainment_4a87c0f53.jpg',
-      link: '/ipad/ipad-mini'
-    }
+      link: '/ipad/ipad-mini',
+    },
   ],
 
   significantOthers: [
@@ -543,37 +566,37 @@ export const iphoneData = {
       title2: 'Apple Intelligence',
       description2: 'AI-opening possibilities.',
       image: '/images/Iphone/apple_intelligence__gbh77cvflkia_xlarge.jpg',
-      link: '/iphone/iphone-16-pro'
+      link: '/iphone/iphone-16-pro',
     },
     {
       title2: 'Cutting-Edge Cameras',
       description2: 'Picture your best photos and videos.',
       image: '/images/Iphone/camera__exi2qfijti0y_xlarge.jpg',
-      link: '/iphone/iphone-16'
+      link: '/iphone/iphone-16',
     },
     {
       title2: 'Chip and Battery Life',
       description2: 'Fast that lasts.',
       image: '/images/Iphone/battery__2v7w6kmztvm2_xlarge.jpg',
-      link: '/iphone/iphone-16e'
+      link: '/iphone/iphone-16e',
     },
     {
       title2: 'Innovation',
       description2: 'Beautiful and durable, by design.',
       image: '/images/Iphone/innovation__os9bmmo3mjee_xlarge.jpg',
-      link: '/iphone/iphone-16e'
+      link: '/iphone/iphone-16e',
     },
     {
       title2: 'Environment',
       description2: 'Recycle. Reuse. Repeat.',
       image: '/images/Iphone/environment__e3v3gj88dl6q_xlarge.jpg',
-      link: '/iphone/iphone-16e'
+      link: '/iphone/iphone-16e',
     },
     {
       title2: 'Privacy',
       description2: 'Your data. Just where you want it.',
       image: '/images/Iphone/privacy__ckc0wa30o55y_xlarge.jpg',
-      link: '/iphone/iphone-16e'
+      link: '/iphone/iphone-16e',
     },
   ],
   significantOthers: [
@@ -589,7 +612,7 @@ export const iphoneData = {
     },
     {
       title: 'iPhone and AirPods',
-      content: 'Set up AirPods on iPhone with just a tap. You’ll love Adaptive Audio, which automatically tailors the noise control for you to provide the best listening experience across different environments and interactions throughout the day.',
+      content: "Set up AirPods on iPhone with just a tap. You'll love Adaptive Audio, which automatically tailors the noise control for you to provide the best listening experience across different environments and interactions throughout the day.",
       image: '/images/Iphone/airpods__cmw5fm88hrma_medium.jpg'
     }
   ],
@@ -601,7 +624,7 @@ export const iphoneData = {
     },
     {
       title: 'AirTag',
-      content: 'Attach one to your keys. Put another in your backpack. If they’re misplaced, just use the Find My app.',
+      content: "Attach one to your keys. Put another in your backpack. If they're misplaced, just use the Find My app.",
       image: '/images/Iphone/airtag__furx99ax8rm2_xlarge.jpg'
     }
   ]
@@ -701,32 +724,32 @@ export const watchData = {
       title2: 'Health',
       description2: 'Knows you by heart.',
       image: '/images/Watch/feature_health__b2yo83wkzoaa_medium.jpg',
-      link: '/watch/apple-watch-ultra-2'
+      link: '/watch/apple-watch-ultra-2',
     },
     {
       title2: 'Fitness',
       description2: 'Every move counts.',
       image: '/images/Watch/feature_fitness__b5owsglf0ieu_medium.jpg',
-      link: '/watch/apple-watch-series-9'
+      link: '/watch/apple-watch-series-9',
     },
     {
       title2: 'Connectivity',
       description2: 'The right call for staying in touch.',
       image: '/images/Watch/feature_connectivity__cwtqydvy2laq_medium.jpg',
-      link: '/watch/apple-watch-se'
+      link: '/watch/apple-watch-se',
     },
     {
       title2: 'Safety',
       description2: 'Good help is easy to find.',
       image: '/images/Watch/feature_safety__gln97xcew2em_medium.jpg',
-      link: '/watch/bands'
+      link: '/watch/bands',
     },
     {
       title2: 'Apple Watch + iPhone',
       description2: 'Dynamic duo.',
       image: '/images/Watch/feature_watch_and_iphone__fiq5g9njy5qy_medium.jpg',
-      link: '/watch/apple-watch-series-9'
-    }
+      link: '/watch/apple-watch-series-9',
+    },
   ],
   significantOthers: [
     {
@@ -755,6 +778,158 @@ export const watchData = {
       title: 'Magic runs in the family',
       content: '',
       image: '/images/Watch/banner_airpods__dc2h7dg71l0m_medium.jpg'
+    }
+  ]
+};
+
+export const airPodsData = {
+  navItems: [
+    {
+      label: 'AirPods Pro',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/>
+          <path d="M20 12v16M12 20h16" stroke="#222" strokeWidth="1.5"/>
+        </svg>
+      ),
+      isNew: true,
+      link: '/airpods-pro'
+    },
+    {
+      label: 'AirPods',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/>
+        </svg>
+      ),
+      link: '/airpods'
+    },
+    {
+      label: 'AirPods Max',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/>
+          <path d="M12 20h16" stroke="#222" strokeWidth="1.5"/>
+        </svg>
+      ),
+      link: '/airpods-max'
+    },
+    {
+      label: 'Compare',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="10" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5"/>
+          <rect x="22" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5" strokeDasharray="4 2"/>
+        </svg>
+      ),
+      link: '/compare'
+    },
+    {
+      label: 'AirPods Accessories',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/>
+          <rect x="28" y="28" width="4" height="4" rx="2" fill="#222"/>
+        </svg>
+      ),
+      link: '/accessories'
+    }
+  ],
+  featureCards: [
+    {
+      title2: 'Active Noise Cancellation',
+      description2: 'Control what you hear. And what you don’t.',
+      content1: 'AirPods Pro feature Active Noise Cancellation that continuously adapts to the geometry of your ear and the fit of the ear tips.',
+      image1: '/images/AirPods/card_noise_cancellation__bcl69t06noci_large.jpg',
+      content2: 'Transparency mode lets you hear and connect with the world around you.',
+      image2: '/images/AirPods/feature_transparency.jpg',
+      link: '/airpods-pro'
+    },
+    {
+      title2: 'Personalized Spatial Audio',
+      description2: 'Immersive sound. Fine‑tuned to you.',
+      content1: 'With dynamic head tracking, AirPods Pro deliver an immersive listening experience that places sound all around you.',
+      image1: '/images/AirPods/card_spatial_audio__uga42js3h4ya_large.jpg',
+      content2: 'Experience movies and shows with theater-like sound.',
+      image2: '/images/AirPods/feature_spatial_audio_2.jpg',
+      link: '/airpods-pro'
+    },
+    {
+      title2: 'Hearing Health',
+      description2: 'Check, aid, and help protect your hearing.1',
+      content1: 'Up to 6 hours of listening time with Active Noise Cancellation enabled.',
+      image1: '/images/AirPods/card_hearing_health__ss2uxyv3j5m6_large.jpg',
+      content2: 'Up to 30 hours of total listening time with the MagSafe Charging Case.',
+      image2: '/images/AirPods/airpods_pro_battery__d8xvsf3t5vqe_xlarge2.jpg',
+      link: '/airpods-pro',
+    },
+
+    {
+      title2: 'Magical Experience',
+      description2: 'Simply effortless.',
+      content1: 'Up to 6 hours of listening time with Active Noise Cancellation enabled.',
+      image1: '/images/AirPods/card_iphone__c7gcuw15pxiu_large.jpg',
+      content2: 'Up to 30 hours of total listening time with the MagSafe Charging Case.',
+      image2: '/images/AirPods/airpods_pro_battery__d8xvsf3t5vqe_xlarge2.jpg',
+      link: '/airpods-pro',
+    },
+  ],
+  lineupSegments: [
+    {
+      name: "AirPods 4",
+      desc: "The next evolution of sound and comfort.",
+      price: "From $129",
+      img: "/images/AirPods/compare_airpods_4__fy4e25bzx1u2_small.png",
+      isNew: true
+    },
+    {
+      name: "AirPods 4 ",
+      desc: "Active Noise Cancellation",
+      price: "From $179",
+      img: "/images/AirPods/compare_airpods_4_noise_cancellation__fnt5kzpmite2_medium.png",
+      isNew: false
+    },
+    {
+      name: "AirPods Pro 2",
+      desc: "Pro-level Active Noise Cancellation and a breakthrough in hearing health.",
+      price: "From $249",
+      img: "/images/AirPods/compare_airpods_pro_2__c3r137ebxwae_small.png",
+      isNew: false
+    },
+    {
+      name: "AirPods Max",
+      desc: "The ultimate over‑ear listening experience.",
+      price: "From $549",
+      img: "/images/AirPods/compare_airpods_max__b14s2x6q07rm_small.png",
+      isNew: false
+    }
+  ],
+  significantOthers: [
+    {
+      title: 'AppleCare+',
+      description: 'Get unlimited repairs for accidental damage protection.',
+      image: '/images/AirPods/significant_applecare.jpg',
+      link: '/applecare'
+    },
+    {
+      title: 'Engrave your AirPods',
+      description: 'Make them unmistakably yours.',
+      image: '/images/AirPods/significant_engrave.jpg',
+      link: '/engrave'
+    }
+  ],
+  essentials: [
+    {
+      title: 'AirPods accessories',
+      content: 'Explore cases, chargers, and more.',
+      image: '/images/AirPods/essentials_accessories.jpg',
+      link: '/accessories'
+    },
+    {
+      title: 'Apple Music',
+      content: 'Stream over 100 million songs ad-free.',
+      image: '/images/AirPods/essentials_music.jpg',
+      link: '/music'
     }
   ]
 };

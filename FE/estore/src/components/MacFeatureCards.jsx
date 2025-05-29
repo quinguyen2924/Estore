@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const ArrowButton = ({ direction, onClick, disabled }) => (
   <button
@@ -21,8 +21,51 @@ const ArrowButton = ({ direction, onClick, disabled }) => (
   </button>
 );
 
+const FeatureModal = ({ open, onClose, feature }) => {
+  if (!open || !feature) return null;
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) onClose();
+  };
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={handleOverlayClick}>
+      <div className="bg-white rounded-2xl max-w-3xl w-full p-8 relative shadow-xl animate-fadeIn">
+        <button
+          className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-black"
+          onClick={onClose}
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+        <div className="mb-2 text-sm font-semibold text-gray-500">Compatibility</div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{feature.title}</h2>
+        <div className="mb-6 text-lg font-semibold text-gray-800">{feature.description}</div>
+        <div className="bg-gray-50 rounded-xl p-6 mb-6">
+          <div className="font-bold text-xl mb-2">{feature.content1}</div>
+          {feature.image1 && (
+            <img src={feature.image1} alt="feature" className="rounded-xl mx-auto my-4 max-h-72 object-contain" />
+          )}
+        </div>
+        <div className="bg-gray-50 rounded-xl p-6 mb-6">
+          <div className="font-bold text-xl mb-2">{feature.content2}</div>
+          {feature.image2 && (
+            <img src={feature.image2} alt="feature2" className="rounded-xl mx-auto my-4 max-h-72 object-contain" />
+          )}
+        </div>
+        <div className="bg-gray-50 rounded-xl p-6">
+          <div className="font-bold text-xl mb-2">{feature.content3}</div>
+          {feature.image3 && (
+            <img src={feature.image3} alt="feature3" className="rounded-xl mx-auto my-4 max-h-72 object-contain" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProductFeatureCards = ({ cards, title = "Get to know our products." }) => {
   const scrollRef = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedFeature, setSelectedFeature] = useState(null);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -31,6 +74,16 @@ const ProductFeatureCards = ({ cards, title = "Get to know our products." }) => 
         behavior: 'smooth'
       });
     }
+  };
+
+  const handleCardClick = (feature) => {
+    setSelectedFeature(feature);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedFeature(null);
   };
 
   return (
@@ -47,10 +100,11 @@ const ProductFeatureCards = ({ cards, title = "Get to know our products." }) => 
               className="min-w-[320px] max-w-xs rounded-3xl p-0 flex-shrink-0 overflow-hidden relative cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               style={{
                 height: 600,
-                backgroundImage: `url(${f.image})`,
+                backgroundImage: `url(${f.image1 || f.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
+              onClick={() => handleCardClick(f)}
             >
               <div className="absolute inset-0 bg-black/10" />
               <div className="relative z-10 flex flex-col items-start justify-start h-full p-8">
@@ -67,6 +121,7 @@ const ProductFeatureCards = ({ cards, title = "Get to know our products." }) => 
           <ArrowButton direction="left" onClick={() => scroll('left')} />
           <ArrowButton direction="right" onClick={() => scroll('right')} />
         </div>
+        <FeatureModal open={modalOpen} onClose={handleCloseModal} feature={selectedFeature} />
       </div>
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }

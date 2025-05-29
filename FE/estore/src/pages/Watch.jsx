@@ -25,7 +25,7 @@ const Watch = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+     
       <MacNavBar navItems={watchData.navItems} />
       <main>
         {/* Title Section */}
@@ -81,7 +81,7 @@ const Watch = () => {
         {/* Essentials */}
         <MacEssentials items={watchData.essentials} title="Apple Watch essentials." />
       </main>
-      <Footer />
+    
     </div>
   );
 };

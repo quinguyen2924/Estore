@@ -7,6 +7,8 @@ import Ipad from '../pages/Ipad';
 import Support from '../pages/Support/SupportPage';
 import Iphone from '../pages/Iphone';
 import Watch from '../pages/Watch';
+import AirPods from '../pages/AirPods';
+
 const publicRoutes = [
   {
     path: '/',
@@ -39,6 +41,10 @@ const publicRoutes = [
   {
     path: '/watch',
     element: <Watch />,
+  },
+  {
+    path: '/airpods',
+    element: <AirPods />,
   }
 ];
 
