@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col w-full">
+      <div className="min-h-screen flex flex-col w-full bg-[#f5f5f7]">
         <Header />
         <div className="flex-1 pt-[88px] md:pt-11 w-full">
           <div className="w-full">

@@ -838,7 +838,7 @@ export const airPodsData = {
   featureCards: [
     {
       title2: 'Active Noise Cancellation',
-      description2: 'Control what you hear. And what you don’t.',
+      description2: 'Control what you hear. And what you don\'t.',
       content1: 'AirPods Pro feature Active Noise Cancellation that continuously adapts to the geometry of your ear and the fit of the ear tips.',
       image1: '/images/AirPods/card_noise_cancellation__bcl69t06noci_large.jpg',
       content2: 'Transparency mode lets you hear and connect with the world around you.',
@@ -933,3 +933,188 @@ export const airPodsData = {
     }
   ]
 };
+export const tvHomeData = {
+  navItems: [
+    {
+      label: 'Apple TV 4K',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="10" y="10" width="20" height="20" rx="3" stroke="#222" strokeWidth="1.5"/>
+          <text x="20" y="25" textAnchor="middle" fontSize="6" fill="#222">TV</text>
+        </svg>
+      ),
+      isNew: false,
+    },
+    {
+      label: 'Apple TV+',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="10" stroke="#222" strokeWidth="1.5"/>
+          <text x="20" y="25" textAnchor="middle" fontSize="6" fill="#222">+</text>
+        </svg>
+      ),
+      isNew: true,
+    },
+    {
+      label: 'Apple TV App',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="10" y="10" width="20" height="20" rx="3" stroke="#222" strokeWidth="1.5"/>
+          <text x="20" y="25" textAnchor="middle" fontSize="6" fill="#222">App</text>
+        </svg>
+      ),
+    },
+    {
+      label: 'Compare',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="10" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5"/>
+          <rect x="22" y="14" width="8" height="12" rx="2" stroke="#222" strokeWidth="1.5" strokeDasharray="4 2"/>
+        </svg>
+      ),
+    },
+    {
+      label: 'Accessories',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="8" stroke="#222" strokeWidth="1.5"/>
+          <rect x="28" y="28" width="4" height="4" rx="2" fill="#222"/>
+        </svg>
+      ),
+    },
+    {
+      label: 'Shop TV',
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="8" y="18" width="24" height="8" rx="2" stroke="#222" strokeWidth="1.5"/>
+          <rect x="14" y="26" width="12" height="2" rx="1" fill="#222"/>
+        </svg>
+      ),
+    },
+  ],
+  lineupSegments: [
+    {
+      name: "HomePod",
+      desc: "Profound sound.",
+      price: "$299",
+      img: "/images/tv-home/homepod__eam53jjm772a_large_2x.jpg",
+      isNew: false,
+      links: [
+        { label: 'Buy', url: '/buy/homepod' },
+        { label: 'Learn more', url: '/homepod' }
+      ]
+    },
+    {
+      name: "HomePod mini",
+      desc: "Surprising sound for its size.",
+      price: "$99",
+      img: "/images/tv-home/room_filling_sound__zagu3551kwyi_large_2x.jpg",
+      isNew: false,
+      links: [
+        { label: 'Buy', url: '/buy/homepod-mini' },
+        { label: 'Learn more', url: '/homepod-mini' }
+      ]
+    },
+    {
+      name: "Apple TV 4K",
+      desc: "The Apple experience. Cinematic in every sense.",
+      price: "Starting at $129",
+      img: "/images/tv-home/apple_tv_4k__b30wcqp0pdle_large_2x.jpg",
+      isNew: false,
+      links: [
+        { label: 'Buy', url: '/buy/apple-tv-4k' },
+        { label: 'Learn more', url: '/apple-tv-4k' }
+      ]
+    },
+    {
+      name: "Home app",
+      desc: "The foundation for a smarter home.",
+      img: "/images/tv-home/homeapp__cpc1k972xys2_large_2x.jpg",
+      isNew: false,
+      links: [
+        { label: 'Learn more', url: '/home-app' }
+      ]
+    },
+  ],
+  featureCards: [
+    {
+      title: 'Easily control your home  from anywhere with your favorite devices.',
+      link: '/home-app',
+      image: '/images/tv-home/smart_control__dsa6v8m1pp0m_large.jpg',
+    },
+    {
+      title: 'Seamlessly connected entertainment in every room.',
+      link: '/homepod',
+      image: '/images/tv-home/smart_connect__d8o6agoqfh0m_large.jpg',
+    },
+    {
+      title: 'Run it all with your voice.',
+      link: '/siri',
+      image: '/images/tv-home/Screenshot 2025-05-31 134655.png',
+    },
+    {
+      title: 'All with the security and privacy of Apple.',
+      link: '/privacy',
+      image: '/images/tv-home/security_and_privacy__bzlguj2x29jm_large.jpg',
+    },
+  ],
+  
+ 
+  essentials: [
+    {
+      title: 'Lighting',
+      content: 'Put your routine on a timer. Or set the mood with bulbs and switches.',
+      image: '/images/tv-home/lighting__bwpnaru6q1w2_large (1).jpg',
+    },
+    {
+      title: 'Security',
+      content: 'Keep an eye on what matters most with cameras, doorbells, and more.',
+      image: '/images/tv-home/security__dbctk5zp4gcy_large.jpg',
+    },
+    {
+      title: 'Comfort',
+      content: 'Turn up the heat or keep your cool with temperature controls and fans.',
+      image: '/images/tv-home/comfort__bnwbuouyz10i_large.jpg',
+    },
+    {
+      title: 'Entry',
+      content: 'Unlock more ways to access your home with locks and garage door openers.',
+        image: '/images/tv-home/entry__bfom4g78kbg2_large.jpg',
+    },
+  ],
+  onTheBigScreen: {
+    title: "Watch, sing, play, and work out.\nOn the big screen.",
+    video: "/images/tv-home/large.mp4",
+    services: [
+      {
+       
+        icon: "/images/tv-home/tv_plus_logo__ftim9r0zkyum_large.png",
+        description: "Stream award-winning\nApple Originals on\nevery screen.",
+        tryItLink: "#",
+        learnMoreLink: "#"
+      },
+      {
+        
+        icon: "/images/tv-home/apple_music_logo__fysswdp9i4yi_large.png",
+        description: "All music. Highest audio\nquality. Zero ads.",
+        tryItLink: "#",
+        learnMoreLink: "#"
+      },
+      {
+       
+        icon: "/images/tv-home/fitness_plus_logo__ejje682nywae_large.png",
+        description: "From HIIT to Meditation,\nthere's something\nfor everyone.",
+        tryItLink: "#",
+        learnMoreLink: "#"
+      },
+      {
+        
+        icon: "/images/tv-home/apple_arcade_logo__fkj0u4ziuguy_large.png",
+        description: "Best collection of mobile\ngames for every player.",
+        tryItLink: "#",
+        learnMoreLink: "#"
+      }
+    ]
+  }
+};
+

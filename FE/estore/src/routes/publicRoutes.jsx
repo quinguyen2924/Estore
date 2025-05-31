@@ -10,6 +10,7 @@ import AccessoriesPage from '../pages/Accessories/AccessoriesPage';
 import Iphone from '../pages/Iphone';
 import Watch from '../pages/Watch';
 import AirPods from '../pages/AirPods';
+import TVHome from '../pages/TVHome';
 
 const publicRoutes = [
   {
@@ -55,6 +56,10 @@ const publicRoutes = [
   {
     path: '/airpods',
     element: <AirPods />,
+  },
+  {
+    path: '/tv-home',
+    element: <TVHome />,
   }
 ];
 
